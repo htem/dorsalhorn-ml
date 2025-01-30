@@ -1,0 +1,50 @@
+# Annotation file to use
+ANNOT_FILE: "../dataset/annots/mrgd_annots.json" 
+
+# Ground-truth name for embeddings
+GT_LABEL_NAME: "mrgd"
+
+# Cloud Volume path config
+
+# Mrgd dataset
+EM_PATH: "precomputed://gs://htem_dorsalhorn_mrgd_r1093/dorsal_sections/dorsal_sections_0-500"
+SEG_PATH: "graphene://https://cave.fanc-fly.com/segmentation/table/mouse_dorsal_spine"
+SEG_MESHES: "mrgd_meshes"
+
+MIP_EM_VOL: !!python/tuple [4,4,45]
+MIP_SEG_VOL: !!python/tuple [32,32,45]
+
+# # Spinal cord DS - cltmr
+# EM_PATH: "precomputed://gs://lee-mouse-spinal-cord-001-raw/sharded"
+# SEG_PATH: "graphene://https://cave.fanc-fly.com/segmentation/table/wclee_mouse_spinalcord_cltmr"
+# SEG_MESHES: "spinal_cord_meshes"
+
+# MIP_EM_VOL: !!python/tuple [32,32,45]
+# MIP_SEG_VOL: !!python/tuple [32,32,45]
+
+# Model path and config
+INPUT_SHAPE: !!python/tuple [129, 129, 129, 1]
+MICRONS_EMBED_MODEL_PATH: "models/microns/model.ckpt-216000.training_tf2resaved-1"
+H01_EMBED_MODEL_PATH: "models/h01/model.ckpt-355200.tf2resaved-1"
+
+ANNOTS_OUTPUT_DIR: "../dataset/annots_processed"
+
+# Caveclient
+CAVECLIENT_DATASTACK: "wclee_mouse_spinalcord_cltmr"
+
+# Script params
+NG_MIP: !!python/tuple [4,4,45] # resolution of annotations
+VOL_MIP: !!python/tuple [32,32,45] # expected resolution moving forward
+OVERWRITE: False
+
+ROOT_SAVE_FOLDER: "../dataset/embeddings"
+FOLDER_EXT: ""
+
+DATA_FOLDER: "data"
+EMBED_FOLDER: "embed"
+
+TRAINED_AGG_RADIUS_UM: 20
+
+EMBED_AGG_RADIUS_UM: 10
+MODELS_2_USE: !!python/tuple ["microns", "h01"]
+OVERWRITE_FILES: False
