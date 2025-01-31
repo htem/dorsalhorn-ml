@@ -18,11 +18,15 @@ import yaml
 with open("config.yaml", 'r') as stream:
     config = yaml.load(stream, Loader=yaml.FullLoader)
 
-# Mosidt model configurations here
+# Set model configurations here
 model_config_use = model_configs.BERT_SNGP_v1.copy()
 model_config_use["num_layers"] = 8
-#model_config_use["dropout_rate"] = 0.2
-#model_config_use["use_bn"] = True
+model_config_use["dropout_rate"] = 0.2
+model_config_use["use_bn"] = True
+
+# create util folders
+for folder in ["dataset", "models"]:
+    os.makedirs(folder, exist_ok=True)
 
 if __name__ == "__main__":    
 
