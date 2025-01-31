@@ -35,7 +35,7 @@ def agg_embedding_v2(center_pt_data, all_data, radius):
     return aggregate_embeddings
 
 
-def create_dataset_embeds(train_data_files, test_data_files, label_map, models2use, CLASS_DIR, AGGREGATE_RADIUS_UM):
+def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_map, models2use, CLASS_DIR, AGGREGATE_RADIUS_UM):
     print("Collecting training/testing embeddings ...")
     train_embed, test_embed = {}, {}
     
@@ -51,6 +51,7 @@ def create_dataset_embeds(train_data_files, test_data_files, label_map, models2u
             all_class_pkl_files = glob.glob(os.path.join(CLASS_DIR, class_n, "embeddings_" + model_in_use, "*.pkl"))
             all_class_data = [] # collect all files from specific class
             for pkl_file in all_class_pkl_files:
+                pkl_file = os.path.join(parent_dir, pkl_file)
                 assert model_in_use in pkl_file
                 assert class_n in pkl_file
                 with open(pkl_file, 'rb') as file:
@@ -62,6 +63,7 @@ def create_dataset_embeds(train_data_files, test_data_files, label_map, models2u
         class_train_data_files = train_data_files[class_n].copy() # get training data
         embeds = []
         for json_file in class_train_data_files[:]:
+            json_file = os.path.join(parent_dir, json_file)
             data_embedding = []
             with open(json_file, 'r') as file:
                 center_pt_data = json.load(file)
@@ -79,6 +81,7 @@ def create_dataset_embeds(train_data_files, test_data_files, label_map, models2u
         class_test_data_files = test_data_files[class_n].copy() # get training data
         embeds = []
         for json_file in class_test_data_files[:]:
+            json_file = os.path.join(parent_dir, json_file)
             data_embedding = []
             with open(json_file, 'r') as file:
                 center_pt_data = json.load(file)
@@ -120,7 +123,7 @@ def convert_file_path_to_model(file_name, model_in_use):
         else:
             raise ValueError(f'Error with file {file_name}')
 
-def visualize_dataset(train_data_files, test_data_files, label_map, only_overall=False):
+def visualize_dataset(train_data_files, test_data_files, parent_dir, label_map, only_overall=False):
     """ Visualize traing and testing split """
 
     class_n_in_use = list(label_map.keys())
@@ -133,6 +136,7 @@ def visualize_dataset(train_data_files, test_data_files, label_map, only_overall
         seg_ids_used[class_n] = {}
         train_synapse_count += len(train_data_files[class_n])
         for json_file in train_data_files[class_n]:
+            json_file = os.path.join(parent_dir, json_file)
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used[class_n]:
@@ -148,6 +152,7 @@ def visualize_dataset(train_data_files, test_data_files, label_map, only_overall
         seg_ids_used_test[class_n] = {}
         test_synapse_count += len(test_data_files[class_n])
         for json_file in test_data_files[class_n]:
+            json_file = os.path.join(parent_dir, json_file)
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used_test[class_n]:

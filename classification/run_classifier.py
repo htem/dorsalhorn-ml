@@ -59,9 +59,9 @@ if __name__ == "__main__":
         print("Loaded.")
             
         # Visualize data set being used
-        visualize_dataset(train_data_files, test_data_files, config["LABEL_MAP"], only_overall=False)
+        visualize_dataset(train_data_files, test_data_files, os.path.dirname(config["EMBEDDING_DIR"]), config["LABEL_MAP"], only_overall=False)
     
-    train_embed, test_embed = create_dataset_embeds(train_data_files, test_data_files, config["LABEL_MAP"], 
+    train_embed, test_embed = create_dataset_embeds(train_data_files, test_data_files, os.path.dirname(config["EMBEDDING_DIR"]), config["LABEL_MAP"], 
                                                     config["MODELS2USE"], config["EMBEDDING_DIR"], config["AGGREGATE_RADIUS_UM"])    
     
     # Gather all embeddings and create labels
