@@ -11,6 +11,10 @@ dataset/
 embed/models/
 embed/*meshes
 
+classification/dataset/
+classification/models/
+classification/results/
+
 # Distribution / packaging
 .Python
 build/
