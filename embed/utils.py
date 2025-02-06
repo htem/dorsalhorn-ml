@@ -174,7 +174,7 @@ def get_local_3d_view(center_pt_nm, segment_id, em_mip, seg_mip, exp_mip, em_vol
         masked_em_vol = np.pad(masked_em_vol, padding, mode='constant', constant_values=0)     
    
     # DEBUG PURPOSE
-    tifffile.imwrite('test.tif', masked_em_vol.transpose())
+    #tifffile.imwrite('test.tif', masked_em_vol.transpose())
     # raise ValueError("Stopping early")
 
     assert masked_em_vol.shape == (BBOX_SIZE, BBOX_SIZE, BBOX_SIZE)
