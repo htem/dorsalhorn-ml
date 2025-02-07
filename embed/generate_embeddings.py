@@ -201,6 +201,7 @@ if __name__ == "__main__":
 
             if config['SAVE_VOL_CUTOUTS']:
                 tiff_file_path = os.path.join(config["ROOT_SAVE_FOLDER"]+config["FOLDER_EXT"], gt_label, 'cutouts', embed_key + '.tiff')
+                os.makedirs(os.path.dirname(tiff_file_path), exist_ok=True)
                 tifffile.imwrite(tiff_file_path, vol_cutout.transpose())
 
             if config['SKIP_EMBEDDING']: # skip embedding cutouts

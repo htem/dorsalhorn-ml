@@ -1,8 +1,8 @@
 # Annotation file to use
-ANNOT_FILE: "../dataset/annots/mrgd_annots.json" 
+ANNOT_FILE: "../dataset/annots/cltmr_annots.json" 
 
 # Ground-truth name for embeddings
-GT_LABEL_NAME: "mrgd"
+GT_LABEL_NAME: "cltmr"
 
 # Cloud Volume path config
 
