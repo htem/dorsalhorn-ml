@@ -48,3 +48,9 @@ TRAINED_AGG_RADIUS_UM: 20
 EMBED_AGG_RADIUS_UM: 10
 MODELS_2_USE: !!python/tuple ["microns", "h01"]
 OVERWRITE_FILES: False
+
+# Save 3d volume cutouts
+SAVE_VOL_CUTOUTS: True
+
+# skip embedding 3d cutouts
+SKIP_EMBEDDING: True

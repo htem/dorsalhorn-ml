@@ -17,6 +17,7 @@ import pickle
 import tensorflow as tf
 from tqdm import tqdm
 import yaml
+import tifffile
 
 from embed.utils import * # custom library with util functions
 
@@ -184,7 +185,7 @@ if __name__ == "__main__":
                     if not os.path.exists(pickle_file_path):
                         embed_done = False
             if embed_done:
-                continue
+                pass
             
             vol_cutout, success = get_local_3d_view(center_pt_nm, root_id, config["MIP_EM_VOL"], 
                     config["MIP_SEG_VOL"], config["VOL_MIP"], em_spinalcord, seg_spinalcord, client, initial_pt=initial_pt)
@@ -197,6 +198,13 @@ if __name__ == "__main__":
                 raise ValueError("3D volume is empty.")
                 
             assert np.array_equal(original_vol_cutout, vol_cutout)
+
+            if config['SAVE_VOL_CUTOUTS']:
+                tiff_file_path = os.path.join(config["ROOT_SAVE_FOLDER"]+config["FOLDER_EXT"], gt_label, 'cutouts', embed_key + '.tiff')
+                tifffile.imwrite(tiff_file_path, vol_cutout.transpose())
+
+            if config['SKIP_EMBEDDING']: # skip embedding cutouts
+                continue
 
             for model_key in config["MODELS_2_USE"]:
                 if model_key == "microns":
