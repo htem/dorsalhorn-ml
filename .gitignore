@@ -10,6 +10,12 @@ __pycache__/
 dataset/
 embed/models/
 embed/*meshes
+embed/error_files/
+embed/logs/
+embed/trash/
+output/
+
+
 
 classification/dataset/
 classification/models/
