@@ -1,0 +1,826 @@
+{
+    "type": "annotation",
+    "source": {
+      "url": "local://annotations",
+      "transform": {
+        "outputDimensions": {
+          "x": [
+            3.2e-8,
+            "m"
+          ],
+          "y": [
+            3.2e-8,
+            "m"
+          ],
+          "z": [
+            4.5e-8,
+            "m"
+          ]
+        }
+      }
+    },
+    "tab": "annotations",
+    "annotations": [
+      {
+        "point": [
+          21455,
+          4457,
+          1475
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf4",
+        "description": "cltmr 35057758"
+      },
+      {
+        "point": [
+          21178,
+          4624,
+          2423
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf13",
+        "description": "non-sensory 34704834"
+      },
+      {
+        "point": [
+          20043,
+          4285,
+          2178
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf16",
+        "description": "cltmr 32208688"
+      },
+      {
+        "point": [
+          7349,
+          4483,
+          2088
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf21",
+        "description": "non-sensory 8262227"
+      },
+      {
+        "point": [
+          25456,
+          4222,
+          1020
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf23",
+        "description": "cltmr 43649818"
+      },
+      {
+        "point": [
+          16547,
+          4490,
+          2196
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf25",
+        "description": "cltmr 24993726"
+      },
+      {
+        "point": [
+          21727,
+          4241,
+          1560
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf26",
+        "description": "cltmr 35528730"
+      },
+      {
+        "point": [
+          21730,
+          4240,
+          1536
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf27",
+        "description": "cltmr 35580221"
+      },
+      {
+        "point": [
+          17636,
+          4451,
+          1917
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf28",
+        "description": "cltmr 27214124"
+      },
+      {
+        "point": [
+          22265,
+          3889,
+          1790
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf29",
+        "description": "cltmr 36616113"
+      },
+      {
+        "point": [
+          7945,
+          4428,
+          2829
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf36",
+        "description": "cltmr 9473166"
+      },
+      {
+        "point": [
+          11931,
+          4369,
+          2629
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf42",
+        "description": "cltmr 16331966"
+      },
+      {
+        "point": [
+          8912,
+          4257,
+          2573
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf43",
+        "description": "non-sensory 11159785"
+      },
+      {
+        "point": [
+          9101,
+          4257,
+          2564
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf44",
+        "description": "non-sensory 11160104"
+      },
+      {
+        "point": [
+          5221,
+          4412,
+          2995
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf45",
+        "description": "cltmr 4678945"
+      },
+      {
+        "point": [
+          10986,
+          4050,
+          2435
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf47",
+        "description": "chtmr-np 14583671"
+      },
+      {
+        "point": [
+          8339,
+          4517,
+          2463
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf50",
+        "description": "cltmr 9902879"
+      },
+      {
+        "point": [
+          17964,
+          4627,
+          2031
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf59",
+        "description": "non-sensory 27836109"
+      },
+      {
+        "point": [
+          14492,
+          4604,
+          1968
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf60",
+        "description": "cltmr 21229632"
+      },
+      {
+        "point": [
+          21670,
+          4580,
+          1444
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf65",
+        "description": "cltmr 35601098"
+      },
+      {
+        "point": [
+          21681,
+          4580,
+          1451
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf66",
+        "description": "cltmr 35601118"
+      },
+      {
+        "point": [
+          21554,
+          4835,
+          1437
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf72",
+        "description": "non-sensory 35049997"
+      },
+      {
+        "point": [
+          24453,
+          4412,
+          1161
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf73",
+        "description": "cltmr 41115093"
+      },
+      {
+        "point": [
+          4459,
+          4328,
+          2969
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf87",
+        "description": "cltmr 3494036"
+      },
+      {
+        "point": [
+          4552,
+          4345,
+          2955
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf88",
+        "description": "cltmr 3494181"
+      },
+      {
+        "point": [
+          4604,
+          4351,
+          2954
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf89",
+        "description": "cltmr 3919498"
+      },
+      {
+        "point": [
+          17659,
+          4488,
+          1910
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf91",
+        "description": "cltmr 27214161"
+      },
+      {
+        "point": [
+          26420,
+          4104,
+          786
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf100",
+        "description": "cltmr 45595645"
+      },
+      {
+        "point": [
+          4968,
+          4205,
+          1941
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf111",
+        "description": "cltmr 4310362"
+      },
+      {
+        "point": [
+          4981,
+          4220,
+          1937
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf112",
+        "description": "cltmr 4310432"
+      },
+      {
+        "point": [
+          22895,
+          4625,
+          1823
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf115",
+        "description": "non-sensory 38172015"
+      },
+      {
+        "point": [
+          21716,
+          4729,
+          1897
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf116",
+        "description": "non-sensory 35694089"
+      },
+      {
+        "point": [
+          23214,
+          4528,
+          1411
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf117",
+        "description": "cltmr 38548590"
+      },
+      {
+        "point": [
+          6637,
+          4178,
+          1946
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf121",
+        "description": "cltmr 7044205"
+      },
+      {
+        "point": [
+          20024,
+          4598,
+          1523
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf134",
+        "description": "cltmr 32175299"
+      },
+      {
+        "point": [
+          7987,
+          4618,
+          2747
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf152",
+        "description": "cltmr 9506863"
+      },
+      {
+        "point": [
+          20993,
+          4404,
+          2276
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf153",
+        "description": "cltmr 34018843"
+      },
+      {
+        "point": [
+          18842,
+          4433,
+          1463
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf161",
+        "description": "cltmr 29647677"
+      },
+      {
+        "point": [
+          19988,
+          4519,
+          1983
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf188",
+        "description": "cltmr 32057370"
+      },
+      {
+        "point": [
+          8527,
+          4961,
+          2666
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf200",
+        "description": "cltmr 10302099"
+      },
+      {
+        "point": [
+          8273,
+          4900,
+          2741
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf214",
+        "description": "cltmr 9903569"
+      },
+      {
+        "point": [
+          8228,
+          4707,
+          2728
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf217",
+        "description": "cltmr 9915266"
+      },
+      {
+        "point": [
+          8249,
+          4574,
+          2428
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf229",
+        "description": "cltmr 9930839"
+      },
+      {
+        "point": [
+          7126,
+          4367,
+          2973
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf250",
+        "description": "cltmr 7850818"
+      },
+      {
+        "point": [
+          7765,
+          4469,
+          2831
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf256",
+        "description": "cltmr 9074346"
+      },
+      {
+        "point": [
+          21740,
+          4258,
+          1547
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf259",
+        "description": "cltmr 35528753"
+      },
+      {
+        "point": [
+          18796,
+          4593,
+          1518
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf272",
+        "description": "non-sensory 29785236"
+      },
+      {
+        "point": [
+          12585,
+          4646,
+          2341
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf278",
+        "description": "non-sensory 17625319"
+      },
+      {
+        "point": [
+          23306,
+          4514,
+          1377
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf291",
+        "description": "non-sensory 39055514"
+      },
+      {
+        "point": [
+          19510,
+          4450,
+          2077
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf292",
+        "description": "non-sensory 31211487"
+      },
+      {
+        "point": [
+          19280,
+          4374,
+          1662
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf293",
+        "description": "cltmr 30644021"
+      },
+      {
+        "point": [
+          22727,
+          4652,
+          1203
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf315",
+        "description": "cltmr 37620619"
+      },
+      {
+        "point": [
+          24168,
+          4404,
+          1309
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf377",
+        "description": "non-sensory 40540681"
+      },
+      {
+        "point": [
+          5711,
+          3992,
+          1957
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf379",
+        "description": "cltmr 5447382"
+      },
+      {
+        "point": [
+          6169,
+          4021,
+          1877
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf381",
+        "description": "cltmr 6228179"
+      },
+      {
+        "point": [
+          21113,
+          4353,
+          1760
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf385",
+        "description": "non-sensory 34119179"
+      },
+      {
+        "point": [
+          6493,
+          4104,
+          1938
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf409",
+        "description": "cltmr 7043996"
+      },
+      {
+        "point": [
+          6504,
+          4098,
+          1931
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf410",
+        "description": "cltmr 7044043"
+      },
+      {
+        "point": [
+          20142,
+          4503,
+          1474
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf414",
+        "description": "cltmr 32242080"
+      },
+      {
+        "point": [
+          4854,
+          4454,
+          3041
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf425",
+        "description": "cltmr 4285650"
+      },
+      {
+        "point": [
+          22383,
+          4216,
+          1546
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf430",
+        "description": "non-sensory 37158106"
+      },
+      {
+        "point": [
+          19528,
+          4631,
+          1502
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf432",
+        "description": "non-sensory 31223688"
+      },
+      {
+        "point": [
+          23461,
+          4295,
+          1698
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf433",
+        "description": "cltmr 39104024"
+      },
+      {
+        "point": [
+          22853,
+          4506,
+          1857
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf437",
+        "description": "non-sensory 38057490"
+      },
+      {
+        "point": [
+          19805,
+          4678,
+          1552
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf457",
+        "description": "cltmr 31661105"
+      },
+      {
+        "point": [
+          20499,
+          3982,
+          1810
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf469",
+        "description": "cltmr 33132169"
+      },
+      {
+        "point": [
+          21084,
+          3994,
+          1765
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf473",
+        "description": "cltmr 34071560"
+      },
+      {
+        "point": [
+          18461,
+          4639,
+          1963
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf512",
+        "description": "glia 28724333"
+      },
+      {
+        "point": [
+          27687,
+          4046,
+          815
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf513",
+        "description": "non-sensory 48263609"
+      },
+      {
+        "point": [
+          22818,
+          4504,
+          1523
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf524",
+        "description": "cltmr 38079437"
+      },
+      {
+        "point": [
+          17803,
+          4538,
+          1875
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf536",
+        "description": "cltmr 27676325"
+      },
+      {
+        "point": [
+          16983,
+          4234,
+          1968
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf540",
+        "description": "cltmr 25822364"
+      },
+      {
+        "point": [
+          16988,
+          4233,
+          1983
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf541",
+        "description": "cltmr 25854007"
+      },
+      {
+        "point": [
+          20820,
+          4510,
+          1914
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf546",
+        "description": "cltmr 33552071"
+      },
+      {
+        "point": [
+          13030,
+          3994,
+          2409
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf547",
+        "description": "chtmr-np 18521868"
+      },
+      {
+        "point": [
+          8276,
+          4794,
+          2143
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf549",
+        "description": "non-sensory 9929138"
+      },
+      {
+        "point": [
+          23707,
+          4707,
+          1439
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf569",
+        "description": "cltmr 39620976"
+      },
+      {
+        "point": [
+          5551,
+          4254,
+          2753
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf579",
+        "description": "cltmr 5449087"
+      },
+      {
+        "point": [
+          18695,
+          4510,
+          1736
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf585",
+        "description": "cltmr 29192749"
+      },
+      {
+        "point": [
+          8365,
+          4578,
+          2425
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf586",
+        "description": "cltmr 9930999"
+      }
+    ],
+    "name": "annotation"
+  }

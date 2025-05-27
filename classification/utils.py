@@ -6,13 +6,80 @@ import pickle
 import numpy as np
 import seaborn as sns
 import sklearn.metrics
+from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 """ Utils for training an embedding classifier (for spinal cord dataset) """
 
+
+def load_man_annots(json_file):
+    with open(json_file, 'r') as file:
+        annots_info = json.load(file)
+    coord_labels = []
+    for annot in annots_info["annotations"]:
+        coord_labels.append([annot["point"], annot["description"].strip().split(" ")[0]])
+    return coord_labels
+
+
+def gen_embeddings_from_json(data_json_file, embedding_dir, AGG_RADIUS, MODELS2USe):
+
+    # AGG_RADIUS = 10
+    # MODELS2USe = ['microns', 'h01', 'sp']
+
+    with open(data_json_file, 'r') as file:
+        synapse_meta_data = json.load(file)
+
+    root_id = synapse_meta_data["root_id"]
+    coords_2_embed = synapse_meta_data["nm_coords"]
+    initial_pt = synapse_meta_data["initial_pt"] # in 32nm
+    initial_pt_in_nm = synapse_meta_data["initial_pt_in_nm"]
+
+    # Filter coordinates to only collect embeddings within ina AGG_RADIUS
+    filtered_coords_2_embed = []
+    for center_pt_nm in coords_2_embed:
+        euc_dist = np.linalg.norm(initial_pt_in_nm - np.array(center_pt_nm))
+        if euc_dist <= AGG_RADIUS *1000:
+            filtered_coords_2_embed.append(center_pt_nm)
+
+    # Convert coordinates to .pkl files
+    nm_coords_tuple = [(coord[0], coord[1], coord[2]) for coord in filtered_coords_2_embed]
+    nm_coords_file_paths = [f"{str(int(coord[0]))}_{str(int(coord[1]))}_{str(int(coord[2]))}.pkl" for coord in filtered_coords_2_embed]
+
+    # Concatenate embeddings here (MICrONs, H01, Own SpinalCord)
+    concatenated_embeddings = []
+
+    leave = False
+    # Loop through each embedding model
+    for model in MODELS2USe:
+        # Append to this and aggregate embeddings (take mean)
+        aggregate_embeddings = []
+
+        embedding_info_path = os.path.join(embedding_dir, 'embeddings_' + model, f'{root_id}_embeddings.pkl')
+        with open(embedding_info_path, 'rb') as file:
+            embedding_info = pickle.load(file)
+        for nm_coord_key in nm_coords_tuple: # Through each coordinate
+            embedding = embedding_info['nm_center_pts_2_embeddings'][nm_coord_key]
+            try:
+                aggregate_embeddings.append(embedding[np.newaxis,:])
+            except Exception as e:
+                leave = True
+                print(e)
+                break # leave loop if embedding isnt done
+        if leave:
+            break
+        
+        aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=0)
+        aggregate_embeddings = np.array([np.mean(aggregate_embeddings, axis=0)])
+        concatenated_embeddings.append(aggregate_embeddings)
+
+    concatenated_embeddings = np.concatenate(concatenated_embeddings, axis=1)
+
+    return concatenated_embeddings
+
+
 def agg_embedding_v2(center_pt_data, all_data, radius):
     """ aggregate embeddings given radius (um) """
-    
+
     nm_coord_center_pt = center_pt_data["initial_pt_in_nm"]
     root_id = center_pt_data["root_id"]
     aggregate_embeddings = []
@@ -26,7 +93,7 @@ def agg_embedding_v2(center_pt_data, all_data, radius):
                 return di["embedding"]
 
         distance_to_center_pt = np.linalg.norm(np.array(di["nm_center_pt"]) - np.array(nm_coord_center_pt)) // 1000 # convert nm to um
-  
+
         if distance_to_center_pt < radius:
             aggregate_embeddings.append(di["embedding"])
 
@@ -35,16 +102,66 @@ def agg_embedding_v2(center_pt_data, all_data, radius):
     return aggregate_embeddings
 
 
-def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_map, models2use, CLASS_DIR, AGGREGATE_RADIUS_UM):
+def agg_embedding_inference_v(center_pt_data, embedding_dir, AGG_RADIUS, MODELS2USe):
+    """ Aggregate embeddings used on inference version file structure """
+    root_id = center_pt_data["root_id"]
+    coords_2_embed = center_pt_data["nm_coords"]
+    initial_pt = center_pt_data["initial_pt"] # in 32nm
+    initial_pt_in_nm = center_pt_data["initial_pt_in_nm"]
+
+    # Filter coordinates to only collect embeddings within ina AGG_RADIUS
+    filtered_coords_2_embed = []
+    for center_pt_nm in coords_2_embed:
+        euc_dist = np.linalg.norm(initial_pt_in_nm - np.array(center_pt_nm))
+        if euc_dist <= AGG_RADIUS *1000:
+            filtered_coords_2_embed.append(center_pt_nm)
+
+    # Convert coordinates to .pkl files
+    nm_coords_tuple = [(coord[0], coord[1], coord[2]) for coord in filtered_coords_2_embed]
+    nm_coords_file_paths = [f"{str(int(coord[0]))}_{str(int(coord[1]))}_{str(int(coord[2]))}.pkl" for coord in filtered_coords_2_embed]
+
+    # Concatenate embeddings here (MICrONs, H01, Own SpinalCord)
+    concatenated_embeddings = []
+
+    # Loop through each embedding model
+    for model in MODELS2USe:
+        # Append to this and aggregate embeddings (take mean)
+        aggregate_embeddings = []
+
+        embedding_info_path = os.path.join(embedding_dir, 'embeddings_' + model, f'{root_id}_embeddings.pkl')
+        with open(embedding_info_path, 'rb') as file:
+            embedding_info = pickle.load(file)
+        for nm_coord_key in nm_coords_tuple: # Through each coordinate
+            embedding = embedding_info['nm_center_pts_2_embeddings'][nm_coord_key]
+            try:
+                aggregate_embeddings.append(embedding[np.newaxis,:])
+            except Exception as e:
+                break # leave loop if embedding isnt done
+
+      
+        aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=0)
+        aggregate_embeddings = np.array([np.mean(aggregate_embeddings, axis=0)])
+        concatenated_embeddings.append(aggregate_embeddings)
+
+    concatenated_embeddings = np.concatenate(concatenated_embeddings, axis=1)
+    return concatenated_embeddings
+
+
+def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_map, models2use, CLASS_DIR, AGGREGATE_RADIUS_UM, use_meshdata=False):
     print("Collecting training/testing embeddings ...")
     train_embed, test_embed = {}, {}
-    
+    train_files_per_class, test_files_per_class = {}, {}
+
+    print(parent_dir, CLASS_DIR, label_map)
+
     print(f"Working with embedding models -> {models2use}")
-    for class_n in label_map.keys():
-        
+    for class_n in tqdm(label_map.keys()):
+
         assert class_n in train_data_files
-        assert class_n in test_data_files
-    
+
+        if test_data_files != {}:
+            assert class_n in test_data_files
+
         # get all embedding files from specific model and class
         all_class_pkl_files_dict = {}
         for model_in_use in models2use:
@@ -53,55 +170,85 @@ def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_m
             for pkl_file in all_class_pkl_files:
                 pkl_file = os.path.join(parent_dir, pkl_file)
                 assert model_in_use in pkl_file
-                assert class_n in pkl_file
+                # assert class_n in pkl_file
                 with open(pkl_file, 'rb') as file:
                     data = pickle.load(file)
                 all_class_data.append(data)
             assert len(all_class_data) > 1 # check to make sure files were correctly collected
             all_class_pkl_files_dict[model_in_use] = all_class_data
-    
+
         class_train_data_files = train_data_files[class_n].copy() # get training data
         embeds = []
-        for json_file in class_train_data_files[:]:
-            json_file = os.path.join(parent_dir, json_file)
-            data_embedding = []
+        for json_file in sorted(class_train_data_files[:]):
+            # data files have different structures depending if it was original training data or run during inference
+            if '/inference/' not in json_file:
+                if '/embeddings/' in json_file:
+                    json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
+                json_file = os.path.join(parent_dir, json_file) 
+
             with open(json_file, 'r') as file:
                 center_pt_data = json.load(file)
-            for model_in_use in models2use:
-                assert class_n in json_file
-                aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
-                data_embedding.append(aggregated_embedding)
-    
-            assert len(data_embedding) == len(models2use)
-            data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
-            embeds.append(data_embedding)    
+
+            data_embedding = []
+            if '/inference/' not in json_file:
+                for model_in_use in models2use:
+                    # assert class_n in json_file
+                    aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                    data_embedding.append(aggregated_embedding)
+
+                assert len(data_embedding) == len(models2use)
+                # if use_meshdata:
+                #     mesh_file_path = os.path.join(CLASS_DIR, class_n, "meshdata", os.path.basename(json_file).replace(".json", ".pkl"))
+                #     with open(mesh_file_path, 'rb') as f:
+                #         mesh_data = pickle.load(f)
+                #     mesh_data = np.array([mesh_data[[0,1,2,9,10,11,12,13,14,15,16,17]]])
+                #     data_embedding.append(mesh_data)
+                data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+            else:
+                embedding_dir = os.path.dirname(os.path.dirname(json_file))
+                data_embedding = agg_embedding_inference_v(center_pt_data, embedding_dir, AGGREGATE_RADIUS_UM, models2use)
+            embeds.append(data_embedding)
+
         train_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
+        train_files_per_class[class_n] = sorted(class_train_data_files[:])
 
+        if test_data_files != {}:
+            class_test_data_files = test_data_files[class_n].copy() # get training data
+            embeds = []
+            for json_file in sorted(class_test_data_files[:]):
+                #json_file = os.path.join(parent_dir, json_file)
+                if '/embeddings/' in json_file:
+                    json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
 
-        class_test_data_files = test_data_files[class_n].copy() # get training data
-        embeds = []
-        for json_file in class_test_data_files[:]:
-            json_file = os.path.join(parent_dir, json_file)
-            data_embedding = []
-            with open(json_file, 'r') as file:
-                center_pt_data = json.load(file)
-            for model_in_use in models2use:
-                assert class_n in json_file
-                aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
-                data_embedding.append(aggregated_embedding)
-    
-            assert len(data_embedding) == len(models2use)
-            data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
-            embeds.append(data_embedding)    
-        test_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
+                data_embedding = []
+                with open(json_file, 'r') as file:
+                    center_pt_data = json.load(file)
+                for model_in_use in models2use:
+                    assert class_n in json_file
+                    aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                    data_embedding.append(aggregated_embedding)
 
+                assert len(data_embedding) == len(models2use)
 
-    return train_embed, test_embed
+                if use_meshdata:
+                    mesh_file_path = os.path.join(CLASS_DIR, class_n, "meshdata", os.path.basename(json_file).replace(".json", ".pkl"))
+                    with open(mesh_file_path, 'rb') as f:
+                        mesh_data = pickle.load(f)
+                    mesh_data = np.array([mesh_data[[0,1,2,9,10,11,12,13,14,15,16,17]]])
+                    data_embedding.append(mesh_data)
+
+                data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+                embeds.append(data_embedding)
+            test_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
+            test_files_per_class[class_n] = sorted(class_test_data_files)
+
+    return train_embed, test_embed, class_train_data_files, class_test_data_files
+
 
 def setup_embeds_and_labels(embed_data, label_map):
     """ quick function to prepare the embeddings and label arrays """
     all_embeddings, labels = [], []
-    for class_n in embed_data.keys():
+    for class_n in sorted(list(embed_data.keys())):
         labels.extend([label_map[class_n] for _ in range(embed_data[class_n].shape[0])])
         all_embeddings.append(embed_data[class_n])
     all_embeddings = np.concatenate(all_embeddings, axis=0)
@@ -136,7 +283,9 @@ def visualize_dataset(train_data_files, test_data_files, parent_dir, label_map, 
         seg_ids_used[class_n] = {}
         train_synapse_count += len(train_data_files[class_n])
         for json_file in train_data_files[class_n]:
-            json_file = os.path.join(parent_dir, json_file)
+            #json_file = os.path.join(parent_dir, json_file)
+            if '/embeddings/' in json_file:
+                json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used[class_n]:
@@ -152,7 +301,10 @@ def visualize_dataset(train_data_files, test_data_files, parent_dir, label_map, 
         seg_ids_used_test[class_n] = {}
         test_synapse_count += len(test_data_files[class_n])
         for json_file in test_data_files[class_n]:
-            json_file = os.path.join(parent_dir, json_file)
+            #json_file = os.path.join(parent_dir, json_file)
+            if '/embeddings/' in json_file:
+                json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
+
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used_test[class_n]:
@@ -369,3 +521,167 @@ def convert_neurons_to_embedding_files(train_neurons, test_neurons, class_to_roo
     print(f'Created test file: {new_testing_dataset_file}')
 
     return train_data_files, test_data_files
+
+
+
+def create_dataset_py_class(embed_dir, label_map, train_classes, test_classes, train_subsample_num=None, test_subsample_num=None, models2use=[], AGGREGATE_RADIUS_UM=1):
+    train_embed = {}
+    test_embed = {}
+
+    for class_n in train_classes:
+        class_dir = os.path.join(embed_dir, class_n)
+        # get all neurons in class
+        json_files = glob.glob(os.path.join(class_dir, "data", "*.json"))
+        if train_subsample_num != None:
+            json_files = random.sample(json_files, k=train_subsample_num)
+
+        all_class_pkl_files_dict = {}
+        for model_in_use in models2use:
+            all_class_pkl_files = glob.glob(os.path.join(class_dir, "embeddings_" + model_in_use, "*.pkl"))
+            all_class_data = [] # collect all files from specific class
+            for pkl_file in all_class_pkl_files:
+                assert model_in_use in pkl_file
+                assert class_n in pkl_file
+                with open(pkl_file, 'rb') as file:
+                    data = pickle.load(file)
+                all_class_data.append(data)
+            assert len(all_class_data) > 1 # check to make sure files were correctly collected
+            all_class_pkl_files_dict[model_in_use] = all_class_data
+
+        embeds = []
+        for json_file in json_files:
+            data_embedding = []
+            with open(json_file, 'r') as file:
+                center_pt_data = json.load(file)
+            for model_in_use in models2use:
+                assert class_n in json_file
+                aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                data_embedding.append(aggregated_embedding)
+
+            assert len(data_embedding) == len(models2use)
+            data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+            embeds.append(data_embedding)
+
+        train_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
+
+    for class_n in test_classes:
+        class_dir = os.path.join(embed_dir, class_n)
+        # get all neurons in class
+        json_files = glob.glob(os.path.join(class_dir, "data", "*.json"))
+        if test_subsample_num != None:
+            json_files = random.sample(json_files, k=test_subsample_num)
+
+        all_class_pkl_files_dict = {}
+        for model_in_use in models2use:
+            all_class_pkl_files = glob.glob(os.path.join(class_dir, "embeddings_" + model_in_use, "*.pkl"))
+            all_class_data = [] # collect all files from specific class
+            for pkl_file in all_class_pkl_files:
+                assert model_in_use in pkl_file
+                assert class_n in pkl_file
+                with open(pkl_file, 'rb') as file:
+                    data = pickle.load(file)
+                all_class_data.append(data)
+            assert len(all_class_data) > 1 # check to make sure files were correctly collected
+            all_class_pkl_files_dict[model_in_use] = all_class_data
+
+        embeds = []
+        for json_file in json_files:
+            data_embedding = []
+            with open(json_file, 'r') as file:
+                center_pt_data = json.load(file)
+            for model_in_use in models2use:
+                assert class_n in json_file
+                aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                data_embedding.append(aggregated_embedding)
+
+            assert len(data_embedding) == len(models2use)
+            data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+            embeds.append(data_embedding)
+
+        test_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
+
+
+    return train_embed, test_embed
+
+def get_seg_id_from_coord(coord, seg_vol, seg_mip=(32,32,45), coordinate_mip=(32,32,45)):
+    """ Use a coordinate to get the latest root id 
+        seg_mip: Resolution of the segmentation cloud volume
+        coordinate_mip: Resolution of the coordinate 
+    """
+    mip_scale = np.array(seg_mip)/np.array(coordinate_mip)
+    seg_coord = (coord[0]//mip_scale[0], coord[1]//mip_scale[1], coord[2]//mip_scale[2])
+    voxel_seg_id = seg_vol[seg_coord][0][0][0][0] # segmentation ID of neuron coordinate
+    return voxel_seg_id
+
+
+def validate_train_test_split(seg_vol, client, train_data_files, test_data_files):
+    """ Additional data is added every one and then, use this to confirm there is no overlap between train and test """
+    print("Validating the training and testing split")
+
+    train_latest_root_ids = []
+    for data_file in tqdm(train_data_files, desc="Gathering training root ids"):
+        if '/embeddings/' in data_file:
+            data_file = data_file.replace('/embeddings/', '/embeddings_unnorm/')
+        with open(data_file, 'r') as file:
+            pt_data = json.load(file)
+        initial_pt = pt_data["initial_pt"] # in 32nm
+        latest_root_id = get_seg_id_from_coord(coord=initial_pt, seg_vol=seg_vol, seg_mip=(32,32,45), coordinate_mip=(32,32,45))
+        train_latest_root_ids.append(latest_root_id)
+
+
+    for data_file in test_data_files:
+        if '/embeddings/' in data_file:
+            data_file = data_file.replace('/embeddings/', '/embeddings_unnorm/')
+        with open(data_file, 'r') as file:
+            pt_data = json.load(file)
+
+        root_id = pt_data["root_id"]
+        initial_pt = pt_data["initial_pt"] # in 32nm
+        latest_root_id = get_seg_id_from_coord(coord=initial_pt, seg_vol=seg_vol, seg_mip=(32,32,45), coordinate_mip=(32,32,45))
+        
+        # test if root id is in the list of train root ids
+        if latest_root_id in train_latest_root_ids:
+            print(f"ERROR: {latest_root_id} exists in the training data.")
+    return
+
+def validate_train_test_split_edit(seg_vol, client, train_data_files, test_data_files):
+    """ Additional data is added every one and then, use this to confirm there is no overlap between train and test """
+    print("Validating the training and testing split")
+
+    train_latest_root_ids = []
+    train_latest_root_ids_to_key = {}
+    for key in tqdm(train_data_files, desc="Gathering training root ids"):
+        for data_file in train_data_files[key]:
+            if '/embeddings/' in data_file:
+                data_file = data_file.replace('/embeddings/', '/embeddings_unnorm/')
+            with open(data_file, 'r') as file:
+                pt_data = json.load(file)
+            initial_pt = pt_data["initial_pt"] # in 32nm
+            latest_root_id = get_seg_id_from_coord(coord=initial_pt, seg_vol=seg_vol, seg_mip=(32,32,45), coordinate_mip=(32,32,45))
+            train_latest_root_ids.append(latest_root_id)
+            train_latest_root_ids_to_key[latest_root_id] = key # okay if overwritten. same root id should have same label
+
+    final_test_data_files = test_data_files.copy()
+    for key in test_data_files:
+        for data_file in test_data_files[key]:
+            if '/embeddings/' in data_file:
+                data_file = data_file.replace('/embeddings/', '/embeddings_unnorm/')
+            with open(data_file, 'r') as file:
+                pt_data = json.load(file)
+
+            root_id = pt_data["root_id"]
+            initial_pt = pt_data["initial_pt"] # in 32nm
+            latest_root_id = get_seg_id_from_coord(coord=initial_pt, seg_vol=seg_vol, seg_mip=(32,32,45), coordinate_mip=(32,32,45))
+            
+            # test if root id is in the list of train root ids
+            if latest_root_id in train_latest_root_ids:
+                print(f"ERROR: {latest_root_id} exists in the training data.")
+                print("- Moving this to the training set")
+            
+                train_data_files[train_latest_root_ids_to_key[latest_root_id]].append(data_file) # add to train
+                final_test_data_files[key].remove(data_file) # remove from test files
+    print('Done.')
+    return train_data_files, final_test_data_files
+
+
+    

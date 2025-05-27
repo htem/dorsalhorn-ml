@@ -1,0 +1,1296 @@
+{
+    "type": "annotation",
+    "source": {
+      "url": "local://annotations",
+      "transform": {
+        "outputDimensions": {
+          "x": [
+            3.2e-8,
+            "m"
+          ],
+          "y": [
+            3.2e-8,
+            "m"
+          ],
+          "z": [
+            4.5e-8,
+            "m"
+          ]
+        }
+      }
+    },
+    "tab": "annotations",
+    "annotations": [
+      {
+        "point": [
+          11051,
+          2862,
+          2782
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf0",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12109,
+          2819,
+          2402
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf1",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15028,
+          2655,
+          1581
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf2",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15424,
+          2676,
+          1520
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf3",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15892,
+          2698,
+          1452
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf4",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13659,
+          2537,
+          2092
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf5",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          11016,
+          2604,
+          2541
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf7",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18210,
+          2491,
+          2223
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf8",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12086,
+          2583,
+          2166
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf9",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          11563,
+          2915,
+          2565
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf10",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          11657,
+          2913,
+          2536
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf11",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          24978,
+          3057,
+          711
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf12",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          11421,
+          2587,
+          2344
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf13",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15865,
+          2697,
+          1345
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf14",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13976,
+          2655,
+          1925
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf15",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13508,
+          2895,
+          1633
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf16",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13044,
+          2773,
+          2134
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf17",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13056,
+          2770,
+          2136
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf18",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12747,
+          2868,
+          2189
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf19",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12942,
+          2869,
+          2150
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf20",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12322,
+          2622,
+          2032
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf21",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          14274,
+          2680,
+          1814
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf22",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          14478,
+          2650,
+          1794
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf23",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13956,
+          2618,
+          1938
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf24",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16740,
+          3128,
+          228
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf25",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16751,
+          3124,
+          219
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf26",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17944,
+          2460,
+          2038
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf27",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16125,
+          2760,
+          1305
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf28",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16132,
+          2697,
+          1380
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf29",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          14229,
+          2693,
+          1813
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf30",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17105,
+          2419,
+          1731
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf31",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16858,
+          3165,
+          410
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf32",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17154,
+          3136,
+          350
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf33",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17171,
+          3141,
+          343
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf34",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20180,
+          2815,
+          1458
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf35",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16484,
+          3186,
+          179
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf36",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16663,
+          3122,
+          180
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf37",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15292,
+          2782,
+          1337
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf38",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15380,
+          2789,
+          1301
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf39",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16184,
+          2960,
+          1151
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf40",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15113,
+          2674,
+          1577
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf41",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15167,
+          2683,
+          1571
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf42",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15235,
+          2655,
+          1603
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf43",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15003,
+          2644,
+          1602
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf46",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15022,
+          2782,
+          1389
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf47",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15160,
+          2818,
+          1301
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf48",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16222,
+          3098,
+          895
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf49",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16238,
+          3102,
+          895
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf50",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16515,
+          3169,
+          875
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf51",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15004,
+          2731,
+          1598
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf52",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15255,
+          2714,
+          1606
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf53",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15266,
+          2714,
+          1601
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf54",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15298,
+          2710,
+          1592
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf55",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16122,
+          2979,
+          1163
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf56",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16156,
+          2908,
+          1192
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf57",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15912,
+          2904,
+          1174
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf58",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          12027,
+          2586,
+          2191
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf59",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16722,
+          3196,
+          620
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf60",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16931,
+          3175,
+          399
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf62",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17058,
+          3172,
+          338
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf63",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16661,
+          3170,
+          175
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf64",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16809,
+          3176,
+          235
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf65",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16820,
+          3174,
+          241
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf66",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16726,
+          3175,
+          226
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf68",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16860,
+          3161,
+          255
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf69",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          16912,
+          3165,
+          254
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf70",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17015,
+          3146,
+          258
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf71",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13420,
+          2603,
+          2104
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf73",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18751,
+          2902,
+          762
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf74",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18912,
+          2874,
+          729
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf75",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20968,
+          2734,
+          2641
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf76",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17008,
+          3131,
+          347
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf79",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18096,
+          2443,
+          2126
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf82",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18436,
+          2885,
+          744
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf83",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22027,
+          2306,
+          1733
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf84",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22247,
+          2317,
+          1715
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf85",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20669,
+          2622,
+          1620
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf86",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20831,
+          2630,
+          1613
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf87",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          19169,
+          2903,
+          781
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf97",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18687,
+          2669,
+          2307
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf98",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          17060,
+          2455,
+          1733
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf99",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18330,
+          2650,
+          2196
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf100",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20413,
+          2756,
+          1432
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf102",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20512,
+          2703,
+          1571
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf103",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20365,
+          2762,
+          1431
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf104",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20100,
+          2622,
+          2538
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf105",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20434,
+          2706,
+          777
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf108",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          15076,
+          2659,
+          1584
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf114",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          21403,
+          2623,
+          1003
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf116",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          24839,
+          2653,
+          600
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf117",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          21199,
+          2635,
+          2756
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf118",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22183,
+          2808,
+          1001
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf119",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22223,
+          2812,
+          994
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf120",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22547,
+          2309,
+          1755
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf121",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          22583,
+          2308,
+          1760
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf122",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          24070,
+          2930,
+          766
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf127",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          23297,
+          2885,
+          818
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf129",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          23171,
+          2928,
+          872
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf130",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          26120,
+          2702,
+          1201
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf132",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          24115,
+          2902,
+          719
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf133",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25457,
+          2899,
+          1024
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf135",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25493,
+          2901,
+          1014
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf136",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28706,
+          3036,
+          510
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf137",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          13456,
+          2890,
+          1612
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf138",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          26293,
+          2837,
+          621
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf139",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25783,
+          2985,
+          701
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf140",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25864,
+          2943,
+          650
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf141",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25979,
+          2854,
+          624
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf143",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          24021,
+          2886,
+          703
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf144",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          26181,
+          2684,
+          1247
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf145",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25566,
+          3136,
+          738
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf146",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          25245,
+          2886,
+          1040
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf147",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28545,
+          2735,
+          212
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf148",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28583,
+          2752,
+          203
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf149",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28748,
+          2763,
+          223
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf150",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          27553,
+          2561,
+          1228
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf151",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          27636,
+          2540,
+          1225
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf152",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28333,
+          2432,
+          1459
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf153",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          18348,
+          2966,
+          308
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf154",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28366,
+          2474,
+          1340
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf155",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28457,
+          2457,
+          1386
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf156",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28526,
+          2467,
+          1412
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf157",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28945,
+          2758,
+          185
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf158",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          28982,
+          2751,
+          132
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf159",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20479,
+          2769,
+          1490
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf161",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20489,
+          2759,
+          1497
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf162",
+        "description": "Aδ-HTMR & C-Heat"
+      },
+      {
+        "point": [
+          20509,
+          2737,
+          1530
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf163",
+        "description": "Aδ-HTMR & C-Heat"
+      }
+    ],
+    "name": "annotation"
+  }

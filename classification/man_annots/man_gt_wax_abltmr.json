@@ -1,0 +1,2076 @@
+{
+    "type": "annotation",
+    "source": {
+      "url": "local://annotations",
+      "transform": {
+        "outputDimensions": {
+          "x": [
+            3.2e-8,
+            "m"
+          ],
+          "y": [
+            3.2e-8,
+            "m"
+          ],
+          "z": [
+            4.5e-8,
+            "m"
+          ]
+        }
+      }
+    },
+    "tab": "annotations",
+    "annotations": [
+      {
+        "point": [
+          19822,
+          6360,
+          1674
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf1",
+        "description": "non-sensory 31657160"
+      },
+      {
+        "point": [
+          26425,
+          6036,
+          2660
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf8",
+        "description": "non-sensory 45732963"
+      },
+      {
+        "point": [
+          19816,
+          6404,
+          1692
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf14",
+        "description": " Aβ-LTMR 31714274"
+      },
+      {
+        "point": [
+          18964,
+          5344,
+          1816
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf26",
+        "description": "Aβ-LTMR 29755323"
+      },
+      {
+        "point": [
+          14030,
+          6057,
+          2025
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf29",
+        "description": "non-sensory 20414560"
+      },
+      {
+        "point": [
+          14295,
+          5402,
+          2458
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf31",
+        "description": "non-sensory 20819339"
+      },
+      {
+        "point": [
+          22673,
+          6029,
+          1647
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf32",
+        "description": "non-sensory 37665347"
+      },
+      {
+        "point": [
+          14149,
+          5364,
+          2462
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf33",
+        "description": "non-sensory 20432519"
+      },
+      {
+        "point": [
+          19767,
+          6206,
+          1495
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf34",
+        "description": "non-sensory 31692274"
+      },
+      {
+        "point": [
+          14275,
+          6087,
+          2092
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf37",
+        "description": "Aδ-LTMR 20847965"
+      },
+      {
+        "point": [
+          14734,
+          5337,
+          2503
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf38",
+        "description": "non-sensory 21775778"
+      },
+      {
+        "point": [
+          14767,
+          5292,
+          2514
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf39",
+        "description": "non-sensory 21775859"
+      },
+      {
+        "point": [
+          14991,
+          5267,
+          2503
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf40",
+        "description": "non-sensory 22060920"
+      },
+      {
+        "point": [
+          15214,
+          6326,
+          1861
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf47",
+        "description": "glia 22555611"
+      },
+      {
+        "point": [
+          19725,
+          6162,
+          1551
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf48",
+        "description": "non-sensory 31707964"
+      },
+      {
+        "point": [
+          19727,
+          6161,
+          1630
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf49",
+        "description": "non-sensory 31707962"
+      },
+      {
+        "point": [
+          19734,
+          6164,
+          1642
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf50",
+        "description": "non-sensory 31707992"
+      },
+      {
+        "point": [
+          17306,
+          6486,
+          2627
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf51",
+        "description": "glia 26843315"
+      },
+      {
+        "point": [
+          19065,
+          6606,
+          1891
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf52",
+        "description": "non-sensory 30209936"
+      },
+      {
+        "point": [
+          23112,
+          6040,
+          2215
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf53",
+        "description": " Aβ-LTMR 38662537"
+      },
+      {
+        "point": [
+          17053,
+          5738,
+          1310
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf54",
+        "description": " Aδ-LTMR 26392725"
+      },
+      {
+        "point": [
+          17628,
+          6593,
+          2274
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf57",
+        "description": "non-sensory 27289007"
+      },
+      {
+        "point": [
+          16205,
+          6497,
+          1647
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf64",
+        "description": "non-sensory 24474652"
+      },
+      {
+        "point": [
+          16939,
+          6758,
+          2535
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf65",
+        "description": "non-sensory 25965883"
+      },
+      {
+        "point": [
+          16505,
+          6808,
+          2401
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf70",
+        "description": "non-sensory 24999130"
+      },
+      {
+        "point": [
+          17105,
+          6620,
+          2569
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf71",
+        "description": "non-sensory 26420941"
+      },
+      {
+        "point": [
+          17288,
+          6494,
+          2634
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf79",
+        "description": "non-sensory 26421183"
+      },
+      {
+        "point": [
+          17145,
+          5950,
+          2221
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf80",
+        "description": "glia 26398111"
+      },
+      {
+        "point": [
+          19433,
+          5852,
+          1447
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf96",
+        "description": "non-sensory 30667460"
+      },
+      {
+        "point": [
+          18562,
+          6681,
+          1950
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf97",
+        "description": "non-sensory 29167272"
+      },
+      {
+        "point": [
+          17214,
+          6551,
+          2513
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf98",
+        "description": "glia 26333858"
+      },
+      {
+        "point": [
+          17222,
+          6510,
+          2561
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf99",
+        "description": "non-sensory 26421082"
+      },
+      {
+        "point": [
+          17661,
+          5427,
+          1310
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf102",
+        "description": "non-sensory 27289663"
+      },
+      {
+        "point": [
+          17635,
+          6283,
+          2953
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf103",
+        "description": "non-sensory 27271695"
+      },
+      {
+        "point": [
+          17727,
+          6156,
+          2090
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf104",
+        "description": "non-sensory 27322548"
+      },
+      {
+        "point": [
+          17413,
+          6383,
+          2743
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf105",
+        "description": "non-sensory 26818802"
+      },
+      {
+        "point": [
+          17531,
+          6298,
+          2861
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf106",
+        "description": "non-sensory 27271523"
+      },
+      {
+        "point": [
+          19331,
+          6350,
+          1364
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf107",
+        "description": "non-sensory 30718298"
+      },
+      {
+        "point": [
+          17725,
+          5507,
+          1352
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf111",
+        "description": "non-sensory 27289755"
+      },
+      {
+        "point": [
+          17905,
+          5970,
+          1244
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf113",
+        "description": "non-sensory 27740543"
+      },
+      {
+        "point": [
+          19132,
+          5734,
+          1705
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf115",
+        "description": "non-sensory 30224593"
+      },
+      {
+        "point": [
+          17734,
+          6773,
+          2057
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf116",
+        "description": "non-sensory 27374947"
+      },
+      {
+        "point": [
+          18683,
+          5243,
+          1408
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf118",
+        "description": "non-sensory 29177428"
+      },
+      {
+        "point": [
+          18272,
+          6393,
+          1961
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf119",
+        "description": "non-sensory 28700739"
+      },
+      {
+        "point": [
+          18495,
+          6288,
+          1236
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf124",
+        "description": "non-sensory 29187057"
+      },
+      {
+        "point": [
+          19529,
+          6329,
+          1320
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf125",
+        "description": "non-sensory 31142576"
+      },
+      {
+        "point": [
+          18554,
+          6448,
+          1908
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf126",
+        "description": "non-sensory 29201061"
+      },
+      {
+        "point": [
+          20617,
+          6217,
+          1652
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf127",
+        "description": "non-sensory 33195401"
+      },
+      {
+        "point": [
+          20936,
+          6438,
+          1690
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf128",
+        "description": "non-sensory 34136471"
+      },
+      {
+        "point": [
+          18815,
+          6707,
+          1869
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf130",
+        "description": "non-sensory 29735181"
+      },
+      {
+        "point": [
+          19011,
+          4705,
+          2187
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf132",
+        "description": "non-sensory 30252735"
+      },
+      {
+        "point": [
+          19502,
+          5945,
+          1479
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf134",
+        "description": "non-sensory 31192623"
+      },
+      {
+        "point": [
+          18662,
+          6278,
+          1246
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf135",
+        "description": "non-sensory 29187254"
+      },
+      {
+        "point": [
+          22663,
+          5739,
+          1583
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf139",
+        "description": "non-sensory 37711957"
+      },
+      {
+        "point": [
+          19503,
+          5936,
+          1646
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf140",
+        "description": "non-sensory 31217731"
+      },
+      {
+        "point": [
+          19598,
+          6031,
+          1615
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf141",
+        "description": "non-sensory 31247053"
+      },
+      {
+        "point": [
+          20254,
+          6526,
+          1721
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf142",
+        "description": "non-sensory 32650907"
+      },
+      {
+        "point": [
+          20474,
+          6464,
+          1710
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf143",
+        "description": "non-sensory 33210899"
+      },
+      {
+        "point": [
+          20501,
+          6453,
+          1699
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf144",
+        "description": "non-sensory 33210920"
+      },
+      {
+        "point": [
+          19368,
+          5848,
+          1403
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf148",
+        "description": "non-sensory 30667375"
+      },
+      {
+        "point": [
+          19435,
+          5750,
+          1373
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf149",
+        "description": "non-sensory 30679099"
+      },
+      {
+        "point": [
+          19661,
+          6121,
+          1625
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf153",
+        "description": "glia 31247157"
+      },
+      {
+        "point": [
+          20665,
+          6323,
+          1766
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf159",
+        "description": "non-sensory 33637202"
+      },
+      {
+        "point": [
+          21190,
+          6219,
+          1696
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf160",
+        "description": "non-sensory 34704459"
+      },
+      {
+        "point": [
+          18935,
+          4904,
+          2173
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf163",
+        "description": "Aδ-LTMR 29690824"
+      },
+      {
+        "point": [
+          19567,
+          5954,
+          1478
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf167",
+        "description": "non-sensory 31192737"
+      },
+      {
+        "point": [
+          19910,
+          6329,
+          1449
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf168",
+        "description": "non-sensory 31601870"
+      },
+      {
+        "point": [
+          17572,
+          6295,
+          2902
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf169",
+        "description": "non-sensory 27271588"
+      },
+      {
+        "point": [
+          20750,
+          6348,
+          1823
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf170",
+        "description": "non-sensory 33637292"
+      },
+      {
+        "point": [
+          19626,
+          5951,
+          1858
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf171",
+        "description": "glia 31242863"
+      },
+      {
+        "point": [
+          22821,
+          5644,
+          1700
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf173",
+        "description": "Aβ-LTMR 37613400"
+      },
+      {
+        "point": [
+          19971,
+          6310,
+          1453
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf177",
+        "description": "non-sensory 32168852"
+      },
+      {
+        "point": [
+          20118,
+          6345,
+          1502
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf178",
+        "description": "non-sensory 32169120"
+      },
+      {
+        "point": [
+          20089,
+          6332,
+          1553
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf179",
+        "description": "non-sensory 32142965"
+      },
+      {
+        "point": [
+          20082,
+          6332,
+          1620
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf180",
+        "description": "non-sensory 32142947"
+      },
+      {
+        "point": [
+          20075,
+          6424,
+          1730
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf181",
+        "description": "non-sensory 32235582"
+      },
+      {
+        "point": [
+          19990,
+          6587,
+          1747
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf182",
+        "description": "non-sensory 32182619"
+      },
+      {
+        "point": [
+          20122,
+          6560,
+          1728
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf183",
+        "description": "non-sensory 32182789"
+      },
+      {
+        "point": [
+          17799,
+          5656,
+          1337
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf202",
+        "description": "non-sensory 27753524"
+      },
+      {
+        "point": [
+          19645,
+          6336,
+          1316
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf203",
+        "description": "glia 31142728"
+      },
+      {
+        "point": [
+          23115,
+          5856,
+          1960
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf204",
+        "description": "non-sensory 38604472"
+      },
+      {
+        "point": [
+          23725,
+          5731,
+          1961
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf205",
+        "description": "non-sensory 39586747"
+      },
+      {
+        "point": [
+          20199,
+          6508,
+          1746
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf225",
+        "description": "non-sensory 32650858"
+      },
+      {
+        "point": [
+          19657,
+          6419,
+          1408
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf226",
+        "description": "Aβ-LTMR  31228943"
+      },
+      {
+        "point": [
+          22689,
+          6047,
+          1884
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf231",
+        "description": "non-sensory  37588432"
+      },
+      {
+        "point": [
+          20804,
+          4984,
+          2461
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf234",
+        "description": "non-sensory 33591205"
+      },
+      {
+        "point": [
+          20925,
+          5307,
+          2240
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf235",
+        "description": "non-sensory 34253144"
+      },
+      {
+        "point": [
+          20981,
+          6435,
+          1674
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf239",
+        "description": "non-sensory 34091129"
+      },
+      {
+        "point": [
+          21660,
+          5918,
+          3095
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf240",
+        "description": "non-sensory 35614675"
+      },
+      {
+        "point": [
+          22198,
+          6262,
+          1498
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf241",
+        "description": "non-sensory 36615626"
+      },
+      {
+        "point": [
+          20828,
+          6424,
+          1706
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf242",
+        "description": "non-sensory 33637409"
+      },
+      {
+        "point": [
+          20775,
+          6459,
+          1787
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf243",
+        "description": "non-sensory 33637330"
+      },
+      {
+        "point": [
+          21446,
+          5444,
+          2108
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf246",
+        "description": "Aδ-HTMR & C-Heat  35195123"
+      },
+      {
+        "point": [
+          20696,
+          4766,
+          2685
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf247",
+        "description": "non-sensory 33662564"
+      },
+      {
+        "point": [
+          18626,
+          6550,
+          1907
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf248",
+        "description": "non-sensory 29167360"
+      },
+      {
+        "point": [
+          20784,
+          4807,
+          2566
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf249",
+        "description": "Aβ-LTMR 33648484"
+      },
+      {
+        "point": [
+          22314,
+          5692,
+          2908
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf251",
+        "description": "non-sensory 36554278"
+      },
+      {
+        "point": [
+          22642,
+          5753,
+          1614
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf252",
+        "description": "non-sensory 37597839"
+      },
+      {
+        "point": [
+          23410,
+          5635,
+          1866
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf253",
+        "description": "Aβ-LTMR 39029915"
+      },
+      {
+        "point": [
+          21687,
+          5961,
+          3085
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf254",
+        "description": "non-sensory 35614691"
+      },
+      {
+        "point": [
+          21694,
+          5969,
+          3190
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf255",
+        "description": "non-sensory 35615694"
+      },
+      {
+        "point": [
+          21711,
+          5995,
+          3122
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf256",
+        "description": "non-sensory 35614722"
+      },
+      {
+        "point": [
+          21489,
+          6402,
+          1671
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf258",
+        "description": "non-sensory 35208552"
+      },
+      {
+        "point": [
+          25247,
+          5705,
+          2208
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf259",
+        "description": "non-sensory 43075243"
+      },
+      {
+        "point": [
+          20842,
+          6369,
+          1793
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf260",
+        "description": "non-sensory 33637411"
+      },
+      {
+        "point": [
+          22832,
+          6457,
+          1352
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf261",
+        "description": "non-sensory 38131989"
+      },
+      {
+        "point": [
+          22853,
+          6462,
+          1357
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf262",
+        "description": "non-sensory 38132024"
+      },
+      {
+        "point": [
+          21918,
+          5494,
+          2220
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf264",
+        "description": "non-sensory 36152859"
+      },
+      {
+        "point": [
+          21751,
+          5874,
+          3045
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf266",
+        "description": "non-sensory 35614820"
+      },
+      {
+        "point": [
+          19681,
+          6427,
+          1389
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf267",
+        "description": "non-sensory 31142775"
+      },
+      {
+        "point": [
+          21835,
+          6231,
+          1638
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf268",
+        "description": "non-sensory 35613309"
+      },
+      {
+        "point": [
+          21781,
+          6152,
+          1694
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf269",
+        "description": "non-sensory 35647807"
+      },
+      {
+        "point": [
+          21801,
+          6200,
+          1740
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf270",
+        "description": "non-sensory 35647858"
+      },
+      {
+        "point": [
+          20989,
+          6307,
+          1841
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf271",
+        "description": "glia 34035407"
+      },
+      {
+        "point": [
+          22379,
+          5654,
+          2860
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf277",
+        "description": "non-sensory 37202566"
+      },
+      {
+        "point": [
+          22502,
+          5977,
+          1665
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf278",
+        "description": "non-sensory 37064290"
+      },
+      {
+        "point": [
+          22598,
+          5943,
+          1640
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf279",
+        "description": "non-sensory 37597737"
+      },
+      {
+        "point": [
+          22049,
+          6084,
+          1707
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf280",
+        "description": "glia 36227275"
+      },
+      {
+        "point": [
+          22153,
+          6261,
+          1552
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf281",
+        "description": "non-sensory 36664222"
+      },
+      {
+        "point": [
+          22724,
+          5992,
+          1920
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf287",
+        "description": "non-sensory 37580001"
+      },
+      {
+        "point": [
+          22421,
+          6025,
+          1691
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf289",
+        "description": "non-sensory 37175043"
+      },
+      {
+        "point": [
+          23170,
+          5949,
+          2230
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf290",
+        "description": "non-sensory 38616285"
+      },
+      {
+        "point": [
+          22456,
+          6147,
+          1610
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf291",
+        "description": "non-sensory 37182132"
+      },
+      {
+        "point": [
+          22388,
+          6342,
+          1436
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf292",
+        "description": "non-sensory 37184557"
+      },
+      {
+        "point": [
+          22860,
+          5586,
+          1612
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf296",
+        "description": "non-sensory 38111000"
+      },
+      {
+        "point": [
+          22211,
+          6030,
+          1783
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf297",
+        "description": "glia 36650781"
+      },
+      {
+        "point": [
+          22495,
+          5786,
+          2810
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf298",
+        "description": "non-sensory 37141587"
+      },
+      {
+        "point": [
+          22960,
+          5829,
+          1763
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf299",
+        "description": "non-sensory 38171661"
+      },
+      {
+        "point": [
+          22611,
+          6367,
+          1393
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf300",
+        "description": "non-sensory 37635077"
+      },
+      {
+        "point": [
+          22304,
+          6288,
+          1474
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf301",
+        "description": "non-sensory 36615764"
+      },
+      {
+        "point": [
+          22782,
+          6475,
+          1377
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf302",
+        "description": "non-sensory 37551550"
+      },
+      {
+        "point": [
+          22804,
+          6476,
+          1373
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf303",
+        "description": "non-sensory 38131962"
+      },
+      {
+        "point": [
+          23197,
+          5945,
+          2242
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf304",
+        "description": "non-sensory 38616382"
+      },
+      {
+        "point": [
+          22469,
+          6322,
+          1441
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf305",
+        "description": "non-sensory 37184645"
+      },
+      {
+        "point": [
+          23745,
+          5410,
+          1881
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf311",
+        "description": "non-sensory 39643994"
+      },
+      {
+        "point": [
+          22862,
+          5903,
+          1958
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf312",
+        "description": "non-sensory 38131340"
+      },
+      {
+        "point": [
+          22771,
+          5958,
+          1944
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf313",
+        "description": "non-sensory 37580095"
+      },
+      {
+        "point": [
+          22812,
+          5849,
+          2017
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf314",
+        "description": "non-sensory 38277598"
+      },
+      {
+        "point": [
+          22847,
+          5889,
+          2707
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf315",
+        "description": "non-sensory 38135981"
+      },
+      {
+        "point": [
+          23231,
+          5983,
+          2289
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf316",
+        "description": "non-sensory 38624053"
+      },
+      {
+        "point": [
+          23077,
+          6576,
+          1336
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf317",
+        "description": "non-sensory 38551742"
+      },
+      {
+        "point": [
+          23295,
+          5361,
+          1422
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf324",
+        "description": "non-sensory 39150520"
+      },
+      {
+        "point": [
+          23184,
+          5439,
+          918
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf325",
+        "description": "non-sensory 38603550"
+      },
+      {
+        "point": [
+          23064,
+          5478,
+          1070
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf326",
+        "description": "non-sensory 38650429"
+      },
+      {
+        "point": [
+          23058,
+          5768,
+          1382
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf328",
+        "description": "non-sensory 38565606"
+      },
+      {
+        "point": [
+          22711,
+          5821,
+          1714
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf329",
+        "description": "non-sensory 37612314"
+      },
+      {
+        "point": [
+          22742,
+          5816,
+          1725
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf330",
+        "description": "non-sensory 37612338"
+      },
+      {
+        "point": [
+          23184,
+          5751,
+          1968
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf335",
+        "description": "non-sensory 38591236"
+      },
+      {
+        "point": [
+          23446,
+          5650,
+          1865
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf336",
+        "description": "non-sensory 39029949"
+      },
+      {
+        "point": [
+          23029,
+          5915,
+          1948
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf337",
+        "description": "non-sensory 38131586"
+      },
+      {
+        "point": [
+          23111,
+          5983,
+          2220
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf338",
+        "description": "non-sensory 38616187"
+      },
+      {
+        "point": [
+          24054,
+          5123,
+          1537
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf341",
+        "description": "Aβ-LTMR 40557769"
+      },
+      {
+        "point": [
+          23310,
+          5384,
+          1425
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf342",
+        "description": "non-sensory 39150536"
+      },
+      {
+        "point": [
+          23602,
+          5740,
+          1820
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf345",
+        "description": "non-sensory 39621267"
+      },
+      {
+        "point": [
+          23788,
+          6008,
+          1799
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf350",
+        "description": "non-sensory 40137515"
+      },
+      {
+        "point": [
+          23185,
+          5702,
+          1327
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf353",
+        "description": "non-sensory 38598954"
+      },
+      {
+        "point": [
+          23396,
+          5983,
+          2477
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf354",
+        "description": "non-sensory 39101500"
+      },
+      {
+        "point": [
+          23794,
+          6503,
+          1452
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf356",
+        "description": "non-sensory 40104025"
+      },
+      {
+        "point": [
+          23251,
+          5930,
+          2370
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf357",
+        "description": "non-sensory 38624110"
+      },
+      {
+        "point": [
+          24448,
+          6906,
+          1444
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf358",
+        "description": "non-sensory 41158086"
+      },
+      {
+        "point": [
+          23617,
+          5525,
+          1824
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf362",
+        "description": "non-sensory 39586562"
+      },
+      {
+        "point": [
+          24201,
+          6643,
+          610
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf363",
+        "description": "non-sensory 40566733"
+      },
+      {
+        "point": [
+          23504,
+          6833,
+          1394
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf364",
+        "description": "non-sensory 39192308"
+      },
+      {
+        "point": [
+          23964,
+          7086,
+          1295
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf365",
+        "description": "non-sensory 40199275"
+      },
+      {
+        "point": [
+          26310,
+          5855,
+          1824
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf366",
+        "description": "non-sensory 45132087"
+      },
+      {
+        "point": [
+          24642,
+          5365,
+          1624
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf367",
+        "description": "Aβ-LTMR 41665440"
+      },
+      {
+        "point": [
+          24688,
+          5178,
+          1679
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf368",
+        "description": "Aβ-LTMR 41593246"
+      },
+      {
+        "point": [
+          24151,
+          5464,
+          1228
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf371",
+        "description": "glia 40625524"
+      },
+      {
+        "point": [
+          23250,
+          5527,
+          1419
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf372",
+        "description": "non-sensory 38673826"
+      },
+      {
+        "point": [
+          23306,
+          5428,
+          1409
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf373",
+        "description": "non-sensory 39150532"
+      },
+      {
+        "point": [
+          24152,
+          7135,
+          1262
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf374",
+        "description": "glia 40689407"
+      },
+      {
+        "point": [
+          24667,
+          5260,
+          1132
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf379",
+        "description": "C-HTMR 41537155"
+      },
+      {
+        "point": [
+          24471,
+          5213,
+          1308
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf380",
+        "description": "non-sensory 41011704"
+      },
+      {
+        "point": [
+          24305,
+          5140,
+          1342
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf381",
+        "description": "non-sensory 41011419"
+      },
+      {
+        "point": [
+          20775,
+          6185,
+          1884
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf385",
+        "description": "non-sensory 33610606"
+      },
+      {
+        "point": [
+          23425,
+          5760,
+          1797
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf386",
+        "description": "non-sensory 39095364"
+      },
+      {
+        "point": [
+          19532,
+          5988,
+          1631
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf392",
+        "description": "non-sensory 31217812"
+      },
+      {
+        "point": [
+          23305,
+          5174,
+          1416
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf393",
+        "description": "non-sensory 39071173"
+      },
+      {
+        "point": [
+          24967,
+          4955,
+          1986
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf397",
+        "description": "non-sensory 42625825"
+      },
+      {
+        "point": [
+          25129,
+          5741,
+          2181
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf398",
+        "description": "glia 42575213"
+      },
+      {
+        "point": [
+          25030,
+          6851,
+          328
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf399",
+        "description": "non-sensory 42664917"
+      },
+      {
+        "point": [
+          24900,
+          5727,
+          2189
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf403",
+        "description": "non-sensory 42133693"
+      },
+      {
+        "point": [
+          22707,
+          6352,
+          1338
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf404",
+        "description": "non-sensory 37635276"
+      },
+      {
+        "point": [
+          26606,
+          5843,
+          1604
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf408",
+        "description": "non-sensory 45710102"
+      },
+      {
+        "point": [
+          25748,
+          4753,
+          1913
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf415",
+        "description": "non-sensory 44080136"
+      },
+      {
+        "point": [
+          25787,
+          4723,
+          1921
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf416",
+        "description": "non-sensory 44080199"
+      },
+      {
+        "point": [
+          25611,
+          4615,
+          1928
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf420",
+        "description": "Aβ-LTMR 43680709"
+      },
+      {
+        "point": [
+          26126,
+          5930,
+          1719
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf424",
+        "description": "glia 44673288"
+      },
+      {
+        "point": [
+          26341,
+          5862,
+          2239
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf425",
+        "description": "glia 45193415"
+      },
+      {
+        "point": [
+          25894,
+          6262,
+          1485
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf427",
+        "description": "non-sensory 44205339"
+      },
+      {
+        "point": [
+          26684,
+          6019,
+          2304
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf437",
+        "description": "glia 46240998"
+      },
+      {
+        "point": [
+          22442,
+          6387,
+          1368
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf441",
+        "description": "non-sensory 37222961"
+      },
+      {
+        "point": [
+          22472,
+          6319,
+          1387
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf442",
+        "description": "non-sensory 37222997"
+      },
+      {
+        "point": [
+          27333,
+          6333,
+          1836
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf443",
+        "description": "non-sensory 47196709"
+      },
+      {
+        "point": [
+          26447,
+          5469,
+          1958
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf444",
+        "description": "Aβ-LTMR 45706326"
+      },
+      {
+        "point": [
+          28923,
+          6463,
+          2184
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf449",
+        "description": "Aβ-LTMR 50822581"
+      },
+      {
+        "point": [
+          27667,
+          5591,
+          1511
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf450",
+        "description": " non-sensory 48342706"
+      },
+      {
+        "point": [
+          26181,
+          6374,
+          1521
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf451",
+        "description": "non-sensory 45126339"
+      },
+      {
+        "point": [
+          28740,
+          5412,
+          1596
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf454",
+        "description": "non-sensory 50358455"
+      },
+      {
+        "point": [
+          29017,
+          5736,
+          1206
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf458",
+        "description": "Aβ-LTMR 50783615"
+      },
+      {
+        "point": [
+          29296,
+          5920,
+          1200
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf459",
+        "description": "Aβ-LTMR 51872857"
+      },
+      {
+        "point": [
+          22516,
+          5851,
+          1636
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf461",
+        "description": "Aβ-LTMR 37064330"
+      },
+      {
+        "point": [
+          29344,
+          6506,
+          2148
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf462",
+        "description": "glia 51953142"
+      },
+      {
+        "point": [
+          22979,
+          6518,
+          1164
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf464",
+        "description": "non-sensory 38144556"
+      },
+      {
+        "point": [
+          31469,
+          5902,
+          1552
+        ],
+        "type": "point",
+        "id": "b6f2611ba4basd3635da2ea158ee9853fab0dabf466",
+        "description": "glia 56526903"
+      }
+    ],
+    "name": "annotation"
+  }

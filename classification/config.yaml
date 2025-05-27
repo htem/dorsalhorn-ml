@@ -1,64 +1,70 @@
 # Name of classes 
 CLASS_NAMES: 
-- cltmr
-- cltmrunlabeled
-- abltmr
-- adltmr
-- chtmrnp
-- othersn
+#- cltmr
+#- cltmrunlabeled
+#- abltmr
+#- adltmr
+#- chtmrnp
+#- othersn
 - adhtmrp
 - chtmrp
-- dend_synapses
-- nonsensory
-- cold
+#- cold
+# - dend_synapses
+# - nonsensory
 
 # directory to embeddings
-EMBEDDING_DIR: '../dataset/embeddings' 
+EMBEDDING_DIR: '../dataset/embeddings_unnorm'
 
-LABEL_MAP: 
-  cltmr: 0 
-  cltmrunlabeled: 0 
-  abltmr: 1
-  adltmr: 2
-  chtmrnp: 3 
-  othersn: 4 
-  adhtmrp: 5 
-  chtmrp: 5 
-  dend_synapses: 6
-  nonsensory: 7 
-  cold: 8
+LABEL_MAP:
+  #cltmr: 0
+  #cltmrunlabeled: 0
+  #abltmr: 1
+  #adltmr: 2
+  #chtmrnp: 3
+  #othersn: 4
+  adhtmrp: 0
+  chtmrp: 1
+  #cold: 6
+  # dend_synapses: 1
+  # nonsensory: 1
+  # cltmr: 0
+  # cltmrunlabeled: 0
+  # abltmr: 0
+  # adltmr: 0
+  # chtmrnp: 0
+  # othersn: 0
+  # adhtmrp: 0
+  # chtmrp: 0
+  # cold: 0
 
-CLASS_WEIGHT_MAP: 
-  0: 1.0 
+CLASS_WEIGHT_MAP:
+  0: 1.0
   1: 1.0
   2: 1.0
-  3: 3.0
-  4: 1.0
-  5: 3.0
-  6: 1.0
-  7: 2.0
-  8: 2.0
+  3: 1.0 #3.0
+  4: 2.0
+  5: 2.0 #4.0
+  6: 2.0
+  7: 1.0 #2.0
+  8: 1.0 #2.0
   9: 1.0
 
 # Dataset config
 CREATE_NEW_DATASET: False
 new_train_test_split: False
-num_train_neurons: 500000 # number of neurons to include in training
-num_test_neurons: 5 # number of neurons to hold out for validation set
+num_train_neurons: 25 # number of neurons to include in training
+num_test_neurons: 10 # number of neurons to hold out for validation set
 
 # select alredy generated pickle files
-TRAIN_EMBED_FILE_PATH: 'dataset/training_embeds_1202_45_useallsyn.pkl'
-TEST_EMBED_FILE_PATH: 'dataset/testing_embeds_1202_45_useallsyn.pkl'
+TRAIN_EMBED_FILE_PATH: 'datasets/training_embeds_1050_313_useallsyn.pkl'
+TEST_EMBED_FILE_PATH: 'datasets/testing_embeds_1050_313_useallsyn.pkl'
 
 AGGREGATE_RADIUS_UM: 10 # Radius to aggregate embeddings
 
-# Model config
-EPOCHS: 10000
-LEARNING_RATE: 0.0001 #0.0001
-BATCH_SIZE: 512
-BALANCE_LABELS: True
-MODELS2USE: 
+# Path to save torch model
+SAVE_MODEL_PATH: "models/mlp_cell_type_classifier_adhtmrp_cheat_microns_h01_sp_10umagg.pth"
+
+MODELS2USE:
 - microns
 - h01
-
-SAVE_MODEL_FOLDER_NAME: 'models/microns_h01_9c_10um_all_weighted'
+- sp
