@@ -1,0 +1,71 @@
+# Annotation file list (IGNORE as of 04-29)
+COORD_LIST:
+- "../dataset/annots/cltmr_annots_250527.json"
+- "../dataset/annots/abltmr_annots_250527.json"
+- "../dataset/annots/chtmrp_annots_250527.json"
+- "../dataset/annots/chtmrnp_annots_250527.json"
+- "../dataset/annots/adhtmrp_annots_250527.json"
+
+# Ground-truth (IGNORE as of 04-29)
+LABEL_NAME_LIST:
+- "cltmr"
+- "abltmr"
+- "chtmrp"
+- "chtmrnp"
+- "adhtmrp"
+
+# Creating more training data
+IS_TRAIN: True
+
+# Name for inference sub directory
+GLOBAL_GT_INFFERENCE: "inference"
+
+# Use synapse annot structure
+USE_SYN_ANNOT_STRUCT: False
+
+# Spinal cord DS - cltmr - Cloud Volume path config
+EM_PATH: "precomputed://gs://lee-mouse-spinal-cord-001-raw/sharded"
+SEG_PATH: "precomputed://gs://lee-mouse-spinal-cord-001-segmentations-prod/ng/seg/240828-huge-sv-32nm-100"
+
+PROOFREAD_SEG_PATH: "graphene://https://cave.fanc-fly.com/segmentation/table/wclee_mouse_spinalcord_cltmr"
+SEG_MESHES: "meshes/flat_seg_spinal_cord_meshes"
+
+MIP_EM_VOL: !!python/tuple [32,32,45]
+MIP_SEG_VOL: !!python/tuple [32,32,45]
+
+# Model path and config
+INPUT_SHAPE: !!python/tuple [129, 129, 129, 1]
+
+MODELS_2_USE:
+    microns: "models/microns/model.ckpt-216000.training_tf2resaved-1"
+    h01: "models/h01/model.ckpt-355200.tf2resaved-1"
+    sp: "/n/data3_vast/hms/neurobio/htem2/users/kd193/train_embedding_model/ckpt/spinal_cord_embed_model_v4/ckpt-3516"
+
+ANNOTS_OUTPUT_DIR: "../dataset/annots_processed"
+
+# Caveclient
+CAVECLIENT_DATASTACK: "wclee_mouse_spinalcord_cltmr"
+
+# Script params
+NG_MIP: !!python/tuple [32,32,45] # resolution of annotations
+VOL_MIP: !!python/tuple [32,32,45] # expected resolution moving forward
+OVERWRITE: False
+
+ROOT_SAVE_FOLDER: "../dataset/embeddings"
+
+DATA_FOLDER: "data"
+EMBED_FOLDER: "embed"
+
+TRAINED_AGG_RADIUS_UM: 20
+
+EMBED_AGG_RADIUS_UM: 10
+OVERWRITE_FILES: False
+
+# Save 3d volume cutouts
+SAVE_VOL_CUTOUTS: True
+
+# skip embedding 3d cutouts
+SKIP_EMBEDDING: False
+
+# Model inference batch size
+INF_BATCH_SIZE: 8

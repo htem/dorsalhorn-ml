@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+#SBATCH -c 18
+#SBATCH -p short
+#SBATCH -t 0-2:30
+#SBATCH --mem=18G
+
+# setup conda env
+unset PYTHONPATH
+module load miniconda3
+source activate ml
+
+# name of config file
+CONFIG_FILE=$config_file
+COORD="${X}_${Y}_${Z}"
+
+# generate coordinates and cutouts
+python3 gen_coord_cutouts.py --config $CONFIG_FILE --coord $COORD
