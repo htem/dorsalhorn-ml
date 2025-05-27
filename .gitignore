@@ -14,7 +14,7 @@ embed/error_files/
 embed/logs/
 embed/trash/
 output/
-
+prepare_cutouts_for_embed_train/
 
 
 classification/dataset/
