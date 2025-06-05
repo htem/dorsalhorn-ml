@@ -2,6 +2,7 @@ import glob
 import os
 import json
 import random
+import re
 import pickle
 import numpy as np
 import seaborn as sns
@@ -22,10 +23,6 @@ def load_man_annots(json_file):
 
 
 def gen_embeddings_from_json(data_json_file, embedding_dir, AGG_RADIUS, MODELS2USe):
-
-    # AGG_RADIUS = 10
-    # MODELS2USe = ['microns', 'h01', 'sp']
-
     with open(data_json_file, 'r') as file:
         synapse_meta_data = json.load(file)
 
@@ -77,36 +74,85 @@ def gen_embeddings_from_json(data_json_file, embedding_dir, AGG_RADIUS, MODELS2U
     return concatenated_embeddings
 
 
+def aggregate_method(embeddings_sorted, center_embedding, method='max'):
+    """ Different methods to aggregate/utilize embeddings """
+
+    # concatenate embeddings from axis=0
+    embeddings_concat = np.concatenate(embeddings_sorted, axis=0)
+
+    # aggregate embedding
+    if method == 'max':
+        # max pooling
+        aggregate_embeddings = np.array([np.max(embeddings_concat, axis=0)])
+    elif method == 'mean':
+        # mean
+        aggregate_embeddings = np.array([np.mean(embeddings_concat, axis=0)])
+    elif method == 'mean_w_center':
+        # mean
+        aggregate_embeddings = np.array([np.mean(embeddings_concat, axis=0)])
+        # center + some aggregate
+        aggregate_embeddings = [center_embedding, aggregate_embeddings] 
+        aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=1)
+    elif method == 'max_w_center':
+        # max pooling
+        aggregate_embeddings = np.array([np.max(embeddings_concat, axis=0)])
+        # center + some aggregate
+        aggregate_embeddings = [center_embedding, aggregate_embeddings] 
+        aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=1)
+    elif method == 'max_and_mean':
+        aggregate_embeddings_mean = np.array([np.mean(embeddings_concat, axis=0)])
+        aggregate_embeddings_max = np.array([np.max(embeddings_concat, axis=0)])
+        aggregate_embeddings = np.concatenate([aggregate_embeddings_mean, aggregate_embeddings_max], axis=1)
+
+
+    # # concatenate center with nearby embeddings
+    # aggregate_embeddings = []
+    # for embedding in embeddings_sorted[:num_of_embeds]:
+    #     aggregate_embeddings.append(embedding)
+    # aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=1)
+
+    return aggregate_embeddings
+
+
 def agg_embedding_v2(center_pt_data, all_data, radius):
     """ aggregate embeddings given radius (um) """
 
     nm_coord_center_pt = center_pt_data["initial_pt_in_nm"]
     root_id = center_pt_data["root_id"]
     aggregate_embeddings = []
+    center_embedding = None
+
+    sorted_embeddings = []
 
     for di in all_data:
         if str(di["root_id"]) != str(root_id):
             continue
 
         if di["nm_center_pt"] == nm_coord_center_pt:
+            center_embedding = di["embedding"] # data stored in 1x64 shape.
             if radius < 2: # return this if true and radius < 2
                 return di["embedding"]
 
         distance_to_center_pt = np.linalg.norm(np.array(di["nm_center_pt"]) - np.array(nm_coord_center_pt)) // 1000 # convert nm to um
 
         if distance_to_center_pt < radius:
-            aggregate_embeddings.append(di["embedding"])
+            sorted_embeddings.append([np.linalg.norm(np.array(di["nm_center_pt"]) - np.array(nm_coord_center_pt)), di["embedding"]])
+            #aggregate_embeddings.append(di["embedding"])
 
-    aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=0)
-    aggregate_embeddings = np.array([np.mean(aggregate_embeddings, axis=0)])
-    return aggregate_embeddings
+    sorted_embeddings_with_dist = sorted(sorted_embeddings, key=lambda x: x[0])
+    sorted_embeddings = []
+    for _, embedding in sorted_embeddings_with_dist[:]:
+        sorted_embeddings.append(embedding)
+
+    return aggregate_method(embeddings_sorted=sorted_embeddings, center_embedding=center_embedding, 
+        method='max_and_mean')
 
 
 def agg_embedding_inference_v(center_pt_data, embedding_dir, AGG_RADIUS, MODELS2USe):
     """ Aggregate embeddings used on inference version file structure """
     root_id = center_pt_data["root_id"]
     coords_2_embed = center_pt_data["nm_coords"]
-    initial_pt = center_pt_data["initial_pt"] # in 32nm
+    # initial_pt = center_pt_data["initial_pt"] # in 32nm
     initial_pt_in_nm = center_pt_data["initial_pt_in_nm"]
 
     # Filter coordinates to only collect embeddings within ina AGG_RADIUS
@@ -117,33 +163,48 @@ def agg_embedding_inference_v(center_pt_data, embedding_dir, AGG_RADIUS, MODELS2
             filtered_coords_2_embed.append(center_pt_nm)
 
     # Convert coordinates to .pkl files
-    nm_coords_tuple = [(coord[0], coord[1], coord[2]) for coord in filtered_coords_2_embed]
-    nm_coords_file_paths = [f"{str(int(coord[0]))}_{str(int(coord[1]))}_{str(int(coord[2]))}.pkl" for coord in filtered_coords_2_embed]
+    nm_coords_list = np.array([(coord[0], coord[1], coord[2]) for coord in filtered_coords_2_embed])
+
+    # sort from closest to furthest
+    dists = np.linalg.norm(nm_coords_list - initial_pt_in_nm, axis=1)
+    nm_coords_list_sorted = nm_coords_list[np.argsort(dists)]
+    nm_coords_list_sorted = [tuple(row) for row in nm_coords_list_sorted] # back to tuples
 
     # Concatenate embeddings here (MICrONs, H01, Own SpinalCord)
     concatenated_embeddings = []
 
-    # Loop through each embedding model
+    # Central embedding
+    center_embedding = None
+
+    # Loop through each embedding model in use
     for model in MODELS2USe:
-        # Append to this and aggregate embeddings (take mean)
-        aggregate_embeddings = []
+        # Append embeddings
+        embeddings_sorted = []
 
         embedding_info_path = os.path.join(embedding_dir, 'embeddings_' + model, f'{root_id}_embeddings.pkl')
         with open(embedding_info_path, 'rb') as file:
             embedding_info = pickle.load(file)
-        for nm_coord_key in nm_coords_tuple: # Through each coordinate
-            embedding = embedding_info['nm_center_pts_2_embeddings'][nm_coord_key]
-            try:
-                aggregate_embeddings.append(embedding[np.newaxis,:])
-            except Exception as e:
-                break # leave loop if embedding isnt done
 
+        for nm_coord_key in nm_coords_list_sorted[:]: # Through each coordinate
+            embedding = embedding_info['nm_center_pts_2_embeddings'][nm_coord_key]
+
+            # keep center embedding
+            if nm_coord_key == (initial_pt_in_nm[0], initial_pt_in_nm[1], initial_pt_in_nm[2]):
+                center_embedding = embedding[np.newaxis,:]
+            try:
+                embeddings_sorted.append(embedding[np.newaxis,:])
+            except Exception as e:
+                # embedding is probably not finished. Send warning then continue
+                print(e)
+                break
       
-        aggregate_embeddings = np.concatenate(aggregate_embeddings, axis=0)
-        aggregate_embeddings = np.array([np.mean(aggregate_embeddings, axis=0)])
-        concatenated_embeddings.append(aggregate_embeddings)
+        concatenated_embeddings.append(
+            aggregate_method(embeddings_sorted=embeddings_sorted, center_embedding=center_embedding, 
+            method='max_and_mean')
+        )
 
     concatenated_embeddings = np.concatenate(concatenated_embeddings, axis=1)
+
     return concatenated_embeddings
 
 
@@ -152,10 +213,10 @@ def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_m
     train_embed, test_embed = {}, {}
     train_files_per_class, test_files_per_class = {}, {}
 
-    print(parent_dir, CLASS_DIR, label_map)
-
     print(f"Working with embedding models -> {models2use}")
     for class_n in tqdm(label_map.keys()):
+
+        print(class_n)
 
         assert class_n in train_data_files
 
@@ -164,11 +225,14 @@ def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_m
 
         # get all embedding files from specific model and class
         all_class_pkl_files_dict = {}
+        single_pkl_embed_pattern = re.compile(r"^\d+_\d+_\d+\.pkl$")
         for model_in_use in models2use:
             all_class_pkl_files = glob.glob(os.path.join(CLASS_DIR, class_n, "embeddings_" + model_in_use, "*.pkl"))
             all_class_data = [] # collect all files from specific class
             for pkl_file in all_class_pkl_files:
-                pkl_file = os.path.join(parent_dir, pkl_file)
+                # pkl_file = os.path.join(parent_dir, pkl_file)
+                if not single_pkl_embed_pattern.match(os.path.basename(pkl_file)): # Ingore if not int_int_int format
+                    continue
                 assert model_in_use in pkl_file
                 # assert class_n in pkl_file
                 with open(pkl_file, 'rb') as file:
@@ -184,17 +248,34 @@ def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_m
             if '/inference/' not in json_file:
                 if '/embeddings/' in json_file:
                     json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
-                json_file = os.path.join(parent_dir, json_file) 
+                #json_file = os.path.join(parent_dir, json_file) 
 
+            #print(json_file)
+            if not os.path.exists(json_file):
+                continue
             with open(json_file, 'r') as file:
                 center_pt_data = json.load(file)
 
+            # Test if data file is usiong new structure
+            pt_data_root_id = center_pt_data["root_id"]
+            new_struct = False
+            if len(glob.glob(os.path.join(os.path.dirname(os.path.dirname(json_file)), "embeddings_*", f"{str(pt_data_root_id)}*"))) > 0:
+                new_struct = True
+
+            #print(new_struct)
+
             data_embedding = []
-            if '/inference/' not in json_file:
+            if '/inference/' not in json_file and new_struct == False:
                 for model_in_use in models2use:
                     # assert class_n in json_file
-                    aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
-                    data_embedding.append(aggregated_embedding)
+                    try:
+                        aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                        data_embedding.append(aggregated_embedding)
+                    except Exception as e:
+                        print(e)
+                        print(json_file)
+                        print(os.path.join(os.path.dirname(json_file), "embeddings_*", f"{str(pt_data_root_id)}*"))
+                        raise e
 
                 assert len(data_embedding) == len(models2use)
                 # if use_meshdata:
@@ -216,29 +297,42 @@ def create_dataset_embeds(train_data_files, test_data_files, parent_dir, label_m
             class_test_data_files = test_data_files[class_n].copy() # get training data
             embeds = []
             for json_file in sorted(class_test_data_files[:]):
-                #json_file = os.path.join(parent_dir, json_file)
                 if '/embeddings/' in json_file:
                     json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
+                #json_file = os.path.join(parent_dir, json_file)
 
                 data_embedding = []
+                if not os.path.exists(json_file):
+                    continue
                 with open(json_file, 'r') as file:
                     center_pt_data = json.load(file)
-                for model_in_use in models2use:
-                    assert class_n in json_file
-                    aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
-                    data_embedding.append(aggregated_embedding)
 
-                assert len(data_embedding) == len(models2use)
+                # Test if data file is usiong new structure
+                pt_data_root_id = center_pt_data["root_id"]
+                new_struct = False
+                if len(glob.glob(os.path.join(os.path.dirname(os.path.dirname(json_file)), "embeddings_*", f"{str(pt_data_root_id)}*"))) > 0:
+                    new_struct = True
 
-                if use_meshdata:
-                    mesh_file_path = os.path.join(CLASS_DIR, class_n, "meshdata", os.path.basename(json_file).replace(".json", ".pkl"))
-                    with open(mesh_file_path, 'rb') as f:
-                        mesh_data = pickle.load(f)
-                    mesh_data = np.array([mesh_data[[0,1,2,9,10,11,12,13,14,15,16,17]]])
-                    data_embedding.append(mesh_data)
+                data_embedding = []
+                if '/inference/' not in json_file and new_struct == False:
+                    for model_in_use in models2use:
+                        # assert class_n in json_file
+                        aggregated_embedding = agg_embedding_v2(center_pt_data, all_class_pkl_files_dict[model_in_use], AGGREGATE_RADIUS_UM)
+                        data_embedding.append(aggregated_embedding)
 
-                data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+                    assert len(data_embedding) == len(models2use)
+                    # if use_meshdata:
+                    #     mesh_file_path = os.path.join(CLASS_DIR, class_n, "meshdata", os.path.basename(json_file).replace(".json", ".pkl"))
+                    #     with open(mesh_file_path, 'rb') as f:
+                    #         mesh_data = pickle.load(f)
+                    #     mesh_data = np.array([mesh_data[[0,1,2,9,10,11,12,13,14,15,16,17]]])
+                    #     data_embedding.append(mesh_data)
+                    data_embedding = np.concatenate(data_embedding, axis=1) # concat embeddings
+                else:
+                    embedding_dir = os.path.dirname(os.path.dirname(json_file))
+                    data_embedding = agg_embedding_inference_v(center_pt_data, embedding_dir, AGGREGATE_RADIUS_UM, models2use)
                 embeds.append(data_embedding)
+
             test_embed[class_n] = np.concatenate(embeds, axis=0) # concat all embeddings to make training set
             test_files_per_class[class_n] = sorted(class_test_data_files)
 
@@ -286,6 +380,8 @@ def visualize_dataset(train_data_files, test_data_files, parent_dir, label_map, 
             #json_file = os.path.join(parent_dir, json_file)
             if '/embeddings/' in json_file:
                 json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
+            if not os.path.exists(json_file):
+                continue
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used[class_n]:
@@ -304,7 +400,8 @@ def visualize_dataset(train_data_files, test_data_files, parent_dir, label_map, 
             #json_file = os.path.join(parent_dir, json_file)
             if '/embeddings/' in json_file:
                 json_file = json_file.replace('/embeddings/', '/embeddings_unnorm/')
-
+            if not os.path.exists(json_file):
+                continue
             with open(json_file, 'r') as file:
                 data = json.load(file)
             if data["root_id"] not in seg_ids_used_test[class_n]:

@@ -50,41 +50,10 @@ proofread_seg_spinalcord = cloudvolume.CloudVolume("graphene://https://cave.fanc
 if __name__ == "__main__":
     ############################ Set up training testing dataset #################################
     print("Setting up training and testing data")
-    if config["CREATE_NEW_DATASET"]: 
-        if config["new_train_test_split"]:
-            class_to_root_data, train_neurons, test_neurons = create_neuron_train_test_split(config["EMBEDDING_DIR"], 
-                                                config["CLASS_NAMES"], config["LABEL_MAP"], 
-                                                num_train_neurons=config["num_train_neurons"], 
-                                                num_test_neurons=config["num_test_neurons"], 
-                                                use_all_train_neurons=True, save_to_json=True)
-        else:
-            train_test_split_file = os.path.join('datasets', 'train_test_split_neurons.json')
-            with open(train_test_split_file, 'r') as f:
-                data = json.load(f)
-                class_to_root_data = data['class_to_root_data']
-                train_neurons = data['train_neurons']
-                test_neurons = data['test_neurons']
-            print(f'Loaded train_test_split file: {train_test_split_file}')
-
-        train_data_files, test_data_files = convert_neurons_to_embedding_files(train_neurons, test_neurons, 
-                                                                   class_to_root_data, use_all_synapses=True, 
-                                                                   use_all_synapses_for_test=True)
-    else:
-        print("- Using previous dataset ...")
-        train_test_split_file = os.path.join('datasets', 'train_test_split_neurons.json')
-        with open(train_test_split_file, 'r') as f:
-            data = json.load(f)
-            class_to_root_data = data['class_to_root_data']
-            train_neurons = data['train_neurons']
-            test_neurons = data['test_neurons']
-        print(f'- Loaded train_test_split file {train_test_split_file}')
-
-        with open(config["TRAIN_EMBED_FILE_PATH"], 'rb') as f:
-            train_data_files = pickle.load(f)
-        with open(config["TEST_EMBED_FILE_PATH"], 'rb') as f:
-            test_data_files = pickle.load(f)
-        print(f"- Loaded training files {config['TRAIN_EMBED_FILE_PATH']}")
-        print(f"- Loaded testing files {config['TEST_EMBED_FILE_PATH']}")
+    with open('datasets/train_test_data_split_040625.pkl', 'rb') as f:
+        dataset = pickle.load(f)
+    train_data_files = dataset['train']
+    test_data_files = dataset['test']
 
     print('\n')
 
@@ -108,7 +77,8 @@ if __name__ == "__main__":
     # Compute inverse frequency weights
     class_weights = 1.0 / class_counts
     class_weights = class_weights / class_weights.sum()  # Normalize
-    # class_weights[6] = class_weights[6] * 2
+    #class_weights[5] = class_weights[5] * 2
+    #class_weights[6] = class_weights[6] * 2
 
     # Gather all embeddings and create labels
     all_train_embeddings, train_labels = setup_embeds_and_labels(train_embed, config["LABEL_MAP"])
@@ -143,16 +113,19 @@ if __name__ == "__main__":
     train_dataset = EmbeddingDataset(X_train, y_train, neuron_ids=train_data_files_flatten, train=True)
     train_loader = DataLoader(train_dataset, batch_size=128, shuffle=True)
 
-    val_dataset = EmbeddingDataset(X_val, y_val, neuron_ids=test_data_files_flatten)
-    val_loader = DataLoader(val_dataset, batch_size=32)
+    val_dataset = EmbeddingDataset(X_val, y_val, neuron_ids=test_data_files_flatten, train=False)
+    val_loader = DataLoader(val_dataset, batch_size=64)
 
     # Training Parameters
-    learning_rate = 1e-5
+    learning_rate = 1e-4
     weight_decay = 1e-4
     min_val_score = .70
     log_every = 100
     num_classes = len(class_counts)
-    num_epochs = 4000
+    num_epochs = 10000
+
+    print("Number of classes:", num_classes)
+    print("Number of embeddings per datapoint:", X_train.shape[-1])
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     class_weights = class_weights.to(device)
@@ -167,29 +140,27 @@ if __name__ == "__main__":
     for epoch in tqdm(range(num_epochs), desc="Training"):
         model.train()
         running_loss = 0.0
+        running_correct = 0.0
+        running_total = 0.0
         for i, (X_batch, y_batch, neuron_id_batch) in enumerate(train_loader):
             X_batch, y_batch = X_batch.to(device), y_batch.to(device)
 
             optimizer.zero_grad()
             outputs = model(X_batch)
+            _,predicted = torch.max(outputs,1)
 
             loss = criterion(outputs, y_batch)
             loss.backward()
             optimizer.step()
 
             running_loss += loss.item()
-
-            batch_loss = nn.CrossEntropyLoss(reduction='none')(outputs, y_batch)
-
-            if epoch % 200 == 0:
-                for j in range(len(X_batch)):
-                    if batch_loss[j].item() > 500.0:
-                        print(f"{neuron_id_batch[j]}, Loss: {batch_loss[j].item()}")
+            running_correct += (predicted == y_batch).sum().item()
+            running_total += y_batch.size(0)
 
         model.eval()
         correct = 0
         total = 0
-        incorrect_neurons = []
+        val_running_loss = 0
         with torch.no_grad():
             for i, (X_batch, y_batch, neuron_id_batch) in enumerate(val_loader):
                 X_batch, y_batch = X_batch.to(device), y_batch.to(device)
@@ -197,13 +168,9 @@ if __name__ == "__main__":
                 _, predicted = torch.max(outputs, 1)
                 correct += (predicted == y_batch).sum().item()
                 total += y_batch.size(0)
+                val_loss = nn.CrossEntropyLoss()(outputs, y_batch)
+                val_running_loss += val_loss.item()
 
-                # if epoch % 200 == 0:
-                #     incorrect = (predicted != y_batch)
-                #     incorrect_neurons.append([neuron_id_batch[i] for i in range(len(neuron_id_batch)) if incorrect[i]])
-        # if epoch % 200 == 0 and epoch != 0:
-        #     print('Incorrect neurons:', incorrect_neurons)
-            
         val_score = correct/total
         if val_score > min_val_score:
             if val_score > best_val_score:
@@ -212,9 +179,11 @@ if __name__ == "__main__":
                 torch.save(model.state_dict(), model_path)
 
         if epoch % log_every == 0 and epoch != 0:
-            print(f"Epoch {epoch}:")
+            print(f"#### Epoch {epoch} ####")
+            print(f"- Train Acc: {100 * running_correct / running_total:.2f}%")
             print(f"- Train Loss: {running_loss / len(train_loader):.4f}")
             print(f"- Val Acc: {100 * correct / total:.2f}%")
+            print(f"- Val Loss: {val_running_loss / len(val_loader):.4f}")
 
             if best_val_score > 0:
                 print(f"- Best Val Acc {best_val_score} saved to {model_path}", )
