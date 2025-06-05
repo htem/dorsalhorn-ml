@@ -215,11 +215,16 @@ if __name__ == "__main__":
         os.makedirs(config["SEG_MESHES"], exist_ok=True)
 
         print(f"\n---- GEN_COORD_CUTOUTS.py ----")
+        print(f" - {coord}")
 
         # coordinates converted to seg_vol mip
         root_id_2_coords = create_rootid_2_coord_map(coord, gt_label=gt_label, seg_vol=proofread_seg_spinalcord, flat_seg_vol=seg_spinalcord, 
                                                      output_dir=config["ANNOTS_OUTPUT_DIR"], NG_MIP=config["NG_MIP"], 
                                                      MIP_SEG_VOL=config["MIP_SEG_VOL"], client=client, issynapsecoords=config["USE_SYN_ANNOT_STRUCT"])
+
+        for root_id in root_id_2_coords:
+            if root_id == 0:
+                raise ValueError("One of the root ids is 0 (background. Fix!")
 
         # Download all meshes from each segid in volume
         all_seg_ids = [int(seg_id) for seg_id in list(root_id_2_coords.keys())]
@@ -237,7 +242,7 @@ if __name__ == "__main__":
                 """Split a list into n approximately equal chunks."""
                 k, m = divmod(len(lst), n)
                 return [lst[i*k + min(i, m):(i+1)*k + min(i+1, m)] for i in range(n)]
-            
+
             seg_ids_chunked = split_into_chunks(seg_ids_to_download, n=10)
 
             par_args_list = [(seg_id_chunk, config["SEG_MESHES"]) for seg_id_chunk in seg_ids_chunked]
